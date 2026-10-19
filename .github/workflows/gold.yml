@@ -44,8 +44,13 @@ jobs:
           git config user.name "gold-bot"
           git config user.email "gold-bot@users.noreply.github.com"
           git add data
-          git diff --cached --quiet || git commit -m "data: $(date -u +%F\ %H:%M) UTC"
-          git push
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "data: $(date -u '+%Y-%m-%d %H:%M') UTC"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
       - name: Notify (morning run or manual)
         if: ${{ github.event.schedule == '20 6 * * *' || (github.event_name == 'workflow_dispatch' && inputs.notify) }}
         env:
