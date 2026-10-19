@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gold Buy-Day Tracker</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{--bg:#faf8f3;--card:#fff;--text:#222;--muted:#777;--buy:#1a7f37;--ok:#b7791f;--wait:#c53030;--line:#d4a017}
+  @media (prefers-color-scheme:dark){:root{--bg:#161512;--card:#211f1b;--text:#eee;--muted:#999}}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,sans-serif;padding:16px}
+  main{max-width:720px;margin:auto}
+  .card{background:var(--card);border-radius:12px;padding:16px;margin-bottom:14px;box-shadow:0 1px 4px #0002}
+  .badge{font-size:2rem;font-weight:800;text-align:center;padding:14px;border-radius:10px;color:#fff}
+  .BUY{background:var(--buy)}.OK{background:var(--ok)}.WAIT{background:var(--wait)}.COL{background:#555}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:center}
+  .grid b{display:block;font-size:1.4rem}.muted{color:var(--muted);font-size:.85rem}
+  li{margin:6px 0}
+</style>
+</head>
+<body><main>
+  <h1>Gold Buy-Day Tracker <span class="muted">Chandukaka Saraf · 22K · ₹10,000</span></h1>
+  <div class="card"><div id="badge" class="badge COL">Loading…</div></div>
+  <div class="card grid">
+    <div><b id="rate">–</b><span class="muted">22K rate / gram</span></div>
+    <div><b id="grams">–</b><span class="muted">grams for ₹10,000</span></div>
+  </div>
+  <div class="card"><b>Why?</b><ul id="reasons"></ul></div>
+  <div class="card"><canvas id="chart" height="220"></canvas></div>
+  <p class="muted" id="foot"></p>
+</main>
+<script>
+fetch('data/verdict.json?'+Date.now()).then(r=>r.json()).then(v=>{
+  const b=document.getElementById('badge');
+  b.textContent=v.verdict;
+  b.className='badge '+(v.verdict.startsWith('BUY')?'BUY':v.verdict==='OK'?'OK':v.verdict==='WAIT'?'WAIT':'COL');
+  document.getElementById('rate').textContent='₹'+Math.round(v.rate_22k).toLocaleString('en-IN');
+  document.getElementById('grams').textContent=v.grams_for_10k.toFixed(3)+' g';
+  document.getElementById('reasons').innerHTML=v.reasons.map(r=>'<li>'+r+'</li>').join('');
+  document.getElementById('foot').textContent='Data as of '+v.as_of+' · '+v.days_of_data+' days recorded · Statistical comparison only, not financial advice.';
+  const h=v.history, avg=v.avg_30d;
+  new Chart(document.getElementById('chart'),{type:'line',data:{labels:h.map(x=>x.date),datasets:[
+    {label:'22K ₹/g',data:h.map(x=>x.rate),borderColor:'#d4a017',tension:.25,pointRadius:2},
+    ...(avg?[{label:'30-day avg',data:h.map(()=>avg),borderColor:'#888',borderDash:[6,4],pointRadius:0}]:[])]},
+    options:{scales:{y:{ticks:{callback:v=>'₹'+v}}}}});
+}).catch(e=>{document.getElementById('badge').textContent='No data yet'});
+</script>
+</body>
+</html>

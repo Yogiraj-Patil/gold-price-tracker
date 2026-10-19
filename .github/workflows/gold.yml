@@ -1,0 +1,60 @@
+name: gold-tracker
+
+on:
+  schedule:
+    - cron: "20 6 * * *"   # 11:50 IST  (records + sends the daily notification)
+    - cron: "0 14 * * *"   # 19:30 IST  (records only)
+  workflow_dispatch:
+    inputs:
+      manual_rate_22k:
+        description: "Only if the site blocks the bot: type today's 22K rate per gram"
+        required: false
+      manual_rate_24k:
+        description: "Optional 24K rate per gram"
+        required: false
+      notify:
+        description: "Send notification now?"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: |
+          pip install requests playwright
+          playwright install --with-deps chromium
+      - name: Fetch rate
+        env:
+          MANUAL_RATE_22K: ${{ inputs.manual_rate_22k }}
+          MANUAL_RATE_24K: ${{ inputs.manual_rate_24k }}
+        run: python scraper/fetch_rate.py
+      - name: Analyze
+        run: python scraper/analyze.py
+      - name: Commit data
+        run: |
+          git config user.name "gold-bot"
+          git config user.email "gold-bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "data: $(date -u +%F\ %H:%M) UTC"
+          git push
+      - name: Notify (morning run or manual)
+        if: ${{ github.event.schedule == '20 6 * * *' || (github.event_name == 'workflow_dispatch' && inputs.notify) }}
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          CALLMEBOT_RECIPIENTS: ${{ secrets.CALLMEBOT_RECIPIENTS }}
+          CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
+          CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+          DASHBOARD_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: python scraper/notify.py

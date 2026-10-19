@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -m 30 https://chandukakasaraf.in/todays-gold-rate/ -A \"Mozilla/5.0\" -o page.html)",
+      "Bash(curl -s -m 30 -I https://chandukakasaraf.in/todays-gold-rate/ -A \"Mozilla/5.0\")",
+      "Bash(python scraper/fetch_rate.py)",
+      "Bash(python -c ' *)",
+      "Bash(python -)",
+      "Bash(NTFY_TOPIC= python -c \"import notify\")"
+    ]
+  }
+}
