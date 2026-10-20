@@ -2,8 +2,8 @@ name: gold-tracker
 
 on:
   schedule:
-    - cron: "20 6 * * *"   # 11:50 IST  (records + sends the daily notification)
-    - cron: "0 14 * * *"   # 19:30 IST  (records only)
+    - cron: "5 6 * * *"   # 11:35 IST  (records + sends the daily notification)
+    - cron: "30 11 * * *"   # 19:30 IST  (records only)
   workflow_dispatch:
     inputs:
       manual_rate_22k:
@@ -52,7 +52,7 @@ jobs:
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
       - name: Notify (morning run or manual)
-        if: ${{ github.event.schedule == '20 6 * * *' || (github.event_name == 'workflow_dispatch' && inputs.notify) }}
+        if: ${{ github.event.schedule == '5 6 * * *' || (github.event_name == 'workflow_dispatch' && inputs.notify) }}
         env:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
