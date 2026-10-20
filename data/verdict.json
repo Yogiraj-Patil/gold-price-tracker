@@ -1,14 +1,21 @@
 {
-  "as_of": "2026-10-19",
-  "rate_22k": 13511.0,
-  "grams_for_10k": 0.7401,
-  "days_of_data": 6,
+  "as_of": "2026-10-20",
+  "rate_22k": 13465.0,
+  "grams_for_10k": 0.7427,
+  "days_of_data": 7,
   "invest": 10000,
-  "verdict": "COLLECTING DATA",
+  "verdict": "BUY NOW",
   "reasons": [
-    "Only 6 day(s) of history so far; need 7 to compare.",
-    "Today: ₹13,511/g -> ₹10,000 buys 0.740 g."
+    "Today is one of the cheaper days of the last month.",
+    "Today ₹13,465/g -> ₹10,000 buys 0.743 g (30-day average buys 0.740 g, best 0.743 g, worst 0.739 g).",
+    "Rate is 0.3% below the 7-day average (₹13,506).",
+    "Cheapest-rank: 1 of 7 days (1 = cheapest).",
+    "Down 0.34% vs previous day (₹13,511)."
   ],
+  "avg_30d": 13505.57,
+  "pct_vs_avg": -0.3,
+  "rank_30d": 1,
+  "window": 7,
   "history": [
     {
       "date": "2026-10-14",
@@ -33,6 +40,10 @@
     {
       "date": "2026-10-19",
       "rate": 13511.0
+    },
+    {
+      "date": "2026-10-20",
+      "rate": 13465.0
     }
   ]
 }
