@@ -93,9 +93,11 @@ def main():
     if os.path.exists(CSV_PATH):
         with open(CSV_PATH, newline="", encoding="utf-8") as f:
             rows = list(csv.DictReader(f))
-    if rows and rows[-1]["site_updated"] == data["site_updated"] \
+    # Skip only if this same rate was already recorded today; otherwise record one row per day
+    # even when the store has not changed its rate or timestamp.
+    if rows and rows[-1]["fetched_at"][:10] == now.strftime("%Y-%m-%d") \
             and str(rows[-1]["rate_22k"]) == str(data["rate_22k"]):
-        print("Rate unchanged since last row; nothing to add.")
+        print("Same rate already recorded today; nothing to add.")
         return
     rows.append({
         "site_updated": data["site_updated"],

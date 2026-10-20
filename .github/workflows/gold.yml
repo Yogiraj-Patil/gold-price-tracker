@@ -3,7 +3,7 @@ name: gold-tracker
 on:
   schedule:
     - cron: "5 6 * * *"   # 11:35 IST  (records + sends the daily notification)
-    - cron: "30 11 * * *"   # 19:30 IST  (records only)
+    - cron: "30 11 * * *"  # 17:00 IST  (records only)
   workflow_dispatch:
     inputs:
       manual_rate_22k:
@@ -58,6 +58,10 @@ jobs:
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           MAIL_TO: ${{ secrets.MAIL_TO }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          WA_TOKEN: ${{ secrets.WA_TOKEN }}
+          WA_PHONE_ID: ${{ secrets.WA_PHONE_ID }}
+          WA_RECIPIENTS: ${{ secrets.WA_RECIPIENTS }}
+          WA_TEMPLATE: ${{ secrets.WA_TEMPLATE }}
           CALLMEBOT_RECIPIENTS: ${{ secrets.CALLMEBOT_RECIPIENTS }}
           CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
           CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}

@@ -4,6 +4,7 @@ import os
 import re
 import smtplib
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
 from email.message import EmailMessage
@@ -70,6 +71,41 @@ def send_whatsapp(subject, body):
         raise RuntimeError(f"{errors} WhatsApp message(s) failed")
 
 
+def send_meta_whatsapp(subject, body):
+    """Official WhatsApp Cloud API. Needs an approved template with 4 body variables:
+    {{1}} verdict, {{2}} rate, {{3}} grams for 10k, {{4}} reasons."""
+    token, phone_id = os.environ.get("WA_TOKEN"), os.environ.get("WA_PHONE_ID")
+    recipients = split_list(os.environ.get("WA_RECIPIENTS"))
+    if not (token and phone_id and recipients):
+        print("Meta WhatsApp not configured; skipping.")
+        return
+    v = json.load(open(VERDICT, encoding="utf-8"))
+    template = os.environ.get("WA_TEMPLATE") or "gold_daily"
+    reasons = re.sub(r"\s+", " ", " | ".join(v["reasons"][:4]))[:900]
+    tpl = {"name": template, "language": {"code": os.environ.get("WA_LANG") or "en"}}
+    if template != "hello_world":
+        vals = [v["verdict"], f"{v['rate_22k']:,.0f}", f"{v['grams_for_10k']:.3f}", reasons]
+        tpl["components"] = [{"type": "body", "parameters": [{"type": "text", "text": x} for x in vals]}]
+    errors = 0
+    for to in recipients:
+        to = re.sub(r"\D", "", to)
+        payload = json.dumps({"messaging_product": "whatsapp", "to": to, "type": "template", "template": tpl}).encode()
+        req = urllib.request.Request(
+            f"https://graph.facebook.com/v21.0/{phone_id}/messages", data=payload,
+            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                print(f"Meta WhatsApp to ...{to[-4:]}: status {r.status}")
+        except urllib.error.HTTPError as e:
+            errors += 1
+            print(f"Meta WhatsApp to ...{to[-4:]} failed: {e.code} {e.read().decode()[:300]}", file=sys.stderr)
+        except Exception as e:  # noqa: BLE001
+            errors += 1
+            print(f"Meta WhatsApp to ...{to[-4:]} failed: {e}", file=sys.stderr)
+    if errors:
+        raise RuntimeError(f"{errors} Meta WhatsApp message(s) failed")
+
+
 def send_push(subject, body):
     """Free phone push via ntfy.sh (install the ntfy app, subscribe to your secret topic)."""
     topic = os.environ.get("NTFY_TOPIC")
@@ -91,7 +127,7 @@ if __name__ == "__main__":
     subject, body = build()
     print(subject, body, sep="\n")
     failed = False
-    for fn in (send_email, send_push, send_whatsapp):
+    for fn in (send_email, send_push, send_meta_whatsapp, send_whatsapp):
         try:
             fn(subject, body)
         except Exception as e:  # noqa: BLE001
