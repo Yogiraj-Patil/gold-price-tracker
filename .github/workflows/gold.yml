@@ -2,7 +2,7 @@ name: gold-tracker
 
 on:
   schedule:
-    - cron: "5 5 * * *"   # 10:35 IST  (records + sends the daily notification)
+    - cron: "13 5 * * *"   # 10:35 IST  (records + sends the daily notification)
     - cron: "30 11 * * *"   # 19:30 IST  (records only)
   workflow_dispatch:
     inputs:
