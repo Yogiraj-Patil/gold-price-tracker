@@ -16,6 +16,10 @@ on:
         description: "Send notification now?"
         type: boolean
         default: true
+      channels:
+        description: "Which channels: all, or e.g. email"
+        required: false
+        default: "all"
 
 permissions:
   contents: write
@@ -51,13 +55,18 @@ jobs:
             git pull --rebase origin "${GITHUB_REF_NAME}"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
-      - name: Notify (morning run or manual)
-        if: ${{ github.event.schedule == '5 6 * * *' || (github.event_name == 'workflow_dispatch' && inputs.notify) }}
+      - name: Notify (only when triggered by workflow_dispatch / cron-job.org)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.notify }}
         env:
+          NOTIFY_CHANNELS: ${{ inputs.channels }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           MAIL_TO: ${{ secrets.MAIL_TO }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          WA_TOKEN: ${{ secrets.WA_TOKEN }}
+          WA_PHONE_ID: ${{ secrets.WA_PHONE_ID }}
+          WA_RECIPIENTS: ${{ secrets.WA_RECIPIENTS }}
+          WA_TEMPLATE: ${{ secrets.WA_TEMPLATE }}
           CALLMEBOT_RECIPIENTS: ${{ secrets.CALLMEBOT_RECIPIENTS }}
           CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
           CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}

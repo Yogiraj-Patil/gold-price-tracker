@@ -1,6 +1,6 @@
 # Gold Buy-Day Tracker
 
-Records Chandukaka Saraf's 22K rate twice a day (GitHub Actions, free), compares it with the last 30 days, and emails/WhatsApps you every morning (11:50 IST) whether today is a good day to put ₹10,000 into gold, and why.
+Records Chandukaka Saraf's 22K rate twice a day (GitHub Actions, free), compares it with the last 30 days, and emails/WhatsApps you every morning (11:35 IST) whether today is a good day to put ₹10,000 into gold, and why.
 
 ## Setup (10 minutes)
 1. Create a new **public** GitHub repo (e.g. `gold-tracker`) and push these files.
@@ -9,7 +9,8 @@ Records Chandukaka Saraf's 22K rate twice a day (GitHub Actions, free), compares
 4. **Settings → Secrets and variables → Actions → New repository secret**:
    - Email (Gmail): `SMTP_USER` (your gmail), `SMTP_PASS` ([App Password](https://myaccount.google.com/apppasswords), needs 2-step verification), `MAIL_TO` — one or many addresses separated by commas, e.g. `me@gmail.com, wife@gmail.com`. To add someone later, just edit this secret.
    - **Phone notification (free, recommended):** install the **ntfy** app (Android/iOS), tap *+* and subscribe to a long random topic name you invent (e.g. `gold-yogesh-7f3k9x2q` — anyone who knows it can read it, so keep it secret). Add the same name as secret `NTFY_TOPIC`. BUY NOW alerts arrive as high-priority; tapping opens the dashboard.
-   - WhatsApp (optional): each person activates CallMeBot once (https://www.callmebot.com/blog/free-api-whatsapp-messages/) and gets their own apikey. Then set secret `CALLMEBOT_RECIPIENTS` = `phone:apikey, phone:apikey` (phone with country code, e.g. `919876543210:123456, 919811122233:654321`). Add more people by appending to it. (Old `CALLMEBOT_PHONE`/`CALLMEBOT_APIKEY` still work for one person.)
+   - **WhatsApp via Meta Cloud API (official, free for up to 5 recipients)** – see `WHATSAPP_SETUP.md`. Secrets: `WA_TOKEN`, `WA_PHONE_ID`, `WA_RECIPIENTS` (comma-separated, with country code), `WA_TEMPLATE`.
+   - WhatsApp via CallMeBot (optional, backup): each person activates CallMeBot once (https://www.callmebot.com/blog/free-api-whatsapp-messages/) and gets their own apikey. Then set secret `CALLMEBOT_RECIPIENTS` = `phone:apikey, phone:apikey` (phone with country code, e.g. `919876543210:123456, 919811122233:654321`). Add more people by appending to it. (Old `CALLMEBOT_PHONE`/`CALLMEBOT_APIKEY` still work for one person.)
    - Phone push: everyone who wants it just subscribes to the same ntfy topic — no extra setup.
 5. **Actions → gold-tracker → Run workflow** to test now.
 
