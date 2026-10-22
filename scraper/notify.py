@@ -127,7 +127,13 @@ if __name__ == "__main__":
     subject, body = build()
     print(subject, body, sep="\n")
     failed = False
-    for fn in (send_email, send_push, send_meta_whatsapp, send_whatsapp):
+    # NOTIFY_CHANNELS: "all" (default) or a list such as "email" (evening run = email only)
+    wanted = set(split_list((os.environ.get("NOTIFY_CHANNELS") or "all").lower()))
+    channels = {send_email: "email", send_push: "push", send_meta_whatsapp: "whatsapp", send_whatsapp: "whatsapp"}
+    for fn, name in channels.items():
+        if "all" not in wanted and name not in wanted:
+            print(f"Skipping {fn.__name__} (not in NOTIFY_CHANNELS).")
+            continue
         try:
             fn(subject, body)
         except Exception as e:  # noqa: BLE001

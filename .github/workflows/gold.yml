@@ -2,8 +2,10 @@ name: gold-tracker
 
 on:
   schedule:
-    - cron: "5 6 * * *"   # 11:35 IST  (records + sends the daily notification)
-    - cron: "30 11 * * *"  # 17:00 IST  (records only)
+    # Backup only: records the rate, never notifies. Notifications are triggered on time by
+    # cron-job.org calling workflow_dispatch (GitHub's own schedule can be hours late).
+    - cron: "5 6 * * *"
+    - cron: "30 11 * * *"
   workflow_dispatch:
     inputs:
       manual_rate_22k:
@@ -16,6 +18,10 @@ on:
         description: "Send notification now?"
         type: boolean
         default: true
+      channels:
+        description: "Which channels: all, or e.g. email"
+        required: false
+        default: "all"
 
 permissions:
   contents: write
@@ -51,9 +57,10 @@ jobs:
             git pull --rebase origin "${GITHUB_REF_NAME}"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
-      - name: Notify (morning run or manual)
-        if: ${{ github.event.schedule == '5 6 * * *' || (github.event_name == 'workflow_dispatch' && inputs.notify) }}
+      - name: Notify (only when triggered by workflow_dispatch / cron-job.org)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.notify }}
         env:
+          NOTIFY_CHANNELS: ${{ inputs.channels }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           MAIL_TO: ${{ secrets.MAIL_TO }}
