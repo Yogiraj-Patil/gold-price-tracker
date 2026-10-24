@@ -13,7 +13,8 @@
       "mcp__28dc99ce-3661-4df2-9ad3-dbb24b3b94ba__get_file_contents",
       "Bash(git pull *)",
       "Bash(sed -i 's|# 19:30 IST  \\(records only\\)|# 17:00 IST  \\(records + email only\\)|; s|# 17:00 IST  \\(records only\\)|# 17:00 IST  \\(records + email only\\)|' .github/workflows/gold.yml)",
-      "Bash(NOTIFY_CHANNELS=email python notify.py)"
+      "Bash(NOTIFY_CHANNELS=email python notify.py)",
+      "mcp__28dc99ce-3661-4df2-9ad3-dbb24b3b94ba__search_repositories"
     ]
   }
 }

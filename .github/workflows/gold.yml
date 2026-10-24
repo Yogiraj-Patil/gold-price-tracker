@@ -61,7 +61,7 @@ jobs:
           NOTIFY_CHANNELS: ${{ inputs.channels }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
-          MAIL_TO: ${{ secrets.MAIL_TO }}
+          MAIL_TO: ${{ vars.MAIL_TO || secrets.MAIL_TO }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           WA_TOKEN: ${{ secrets.WA_TOKEN }}
           WA_PHONE_ID: ${{ secrets.WA_PHONE_ID }}
