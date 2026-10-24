@@ -1,4 +1,5 @@
 """Send the daily verdict by email and/or WhatsApp (CallMeBot). Credentials come from env (GitHub Secrets)."""
+import html
 import json
 import os
 import re
@@ -48,6 +49,20 @@ def split_list(value):
     return [x.strip() for x in re.split(r"[,;\n]+", value or "") if x.strip()]
 
 
+def email_html(subject, body):
+    """HTML version of the message with a 'Open dashboard' button at the top."""
+    esc = html.escape
+    text = esc(body)
+    if DASHBOARD:
+        # the plain 'Dashboard: <url>' line near the bottom becomes a real link too
+        text = text.replace(esc(DASHBOARD), f'<a href="{esc(DASHBOARD, quote=True)}">{esc(DASHBOARD)}</a>')
+    button = (f'<p><a href="{esc(DASHBOARD, quote=True)}" style="background:#d4a017;color:#222;padding:10px 18px;'
+              f'border-radius:6px;text-decoration:none;font-weight:bold">Open dashboard</a></p>') if DASHBOARD else ""
+    return (f'<html><body style="font-family:system-ui,Segoe UI,Arial,sans-serif;line-height:1.45">'
+            f'<h3 style="margin:0 0 8px">{esc(subject)}</h3>{button}'
+            f'<div style="white-space:pre-wrap">{text}</div></body></html>')
+
+
 def send_email(subject, body):
     user, pw = os.environ.get("SMTP_USER"), os.environ.get("SMTP_PASS")
     recipients = split_list(os.environ.get("MAIL_TO"))
@@ -57,7 +72,10 @@ def send_email(subject, body):
     msg = EmailMessage()
     msg["Subject"], msg["From"] = subject, user
     msg["Bcc"] = ", ".join(recipients)          # each person sees only their own address
-    msg.set_content(body)
+    # Plain-text part: dashboard link first, so it is never buried under the details.
+    plain = f"Dashboard: {DASHBOARD}\n\n{body}" if DASHBOARD else body
+    msg.set_content(plain)
+    msg.add_alternative(email_html(subject, body), subtype="html")   # clickable button + readable layout
     with smtplib.SMTP(os.environ.get("SMTP_HOST", "smtp.gmail.com"), int(os.environ.get("SMTP_PORT", "587"))) as s:
         s.starttls()
         s.login(user, pw)
