@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24 17:17:55",
+  "generated_at": "2026-10-24 16:24:21",
   "invest": 10000,
   "metal": "gold",
   "stores": [
@@ -74,7 +74,7 @@
       "note": "Rates are labelled 'applicable for online purchase only'",
       "rate": 13117.0,
       "grams_for_10k": 0.7624,
-      "as_of": "2026-10-24",
+      "as_of": "2026-10-23",
       "stale": false,
       "verdict": "COLLECTING DATA",
       "reasons": [
@@ -84,7 +84,7 @@
       "days_of_data": 1,
       "history": [
         {
-          "date": "2026-10-24",
+          "date": "2026-10-23",
           "rate": 13117.0
         }
       ]
@@ -111,7 +111,7 @@
   ],
   "rate_22k": 13117.0,
   "silver": {
-    "generated_at": "2026-10-24 17:17:55",
+    "generated_at": "2026-10-24 16:24:21",
     "invest": 5000,
     "metal": "silver",
     "stores": [
@@ -142,7 +142,7 @@
         "note": "Rates are labelled 'applicable for online purchase only'",
         "rate": 198.0,
         "grams_for_10k": 25.2525,
-        "as_of": "2026-10-24",
+        "as_of": "2026-10-23",
         "stale": false,
         "verdict": "COLLECTING DATA",
         "reasons": [
@@ -152,7 +152,7 @@
         "days_of_data": 1,
         "history": [
           {
-            "date": "2026-10-24",
+            "date": "2026-10-23",
             "rate": 198.0
           }
         ]
@@ -163,7 +163,7 @@
       "chandukaka-alandi"
     ],
     "verdict": "COLLECTING DATA",
-    "timing_basis": "Chandukaka Chandannagar's own price history (1 days; only 1 day(s) are shared by all stores so far)",
+    "timing_basis": "Chandukaka Chandannagar's own price history (1 days; only 0 day(s) are shared by all stores so far)",
     "best_store": "chandukaka-chandannagar",
     "best_label": "Chandukaka Chandannagar",
     "rate": 198.0,
@@ -171,7 +171,7 @@
     "reasons": [
       "Cheapest today: Chandukaka Chandannagar at ₹198.00/g -> ₹5,000 buys 25.253 g.",
       "Chandukaka Alandi has the same rate.",
-      "Timing is judged on Chandukaka Chandannagar's own price history (1 days; only 1 day(s) are shared by all stores so far).",
+      "Timing is judged on Chandukaka Chandannagar's own price history (1 days; only 0 day(s) are shared by all stores so far).",
       "Only 1 day(s) of history so far; need 7 to compare.",
       "Today: ₹198/g -> ₹5,000 buys 25.253 g."
     ]
