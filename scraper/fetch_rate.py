@@ -81,10 +81,28 @@ def via_requests(store):
     return parse(store, r.text)
 
 
+# document.body.textContent glues neighbouring elements together ('22K13117'), which breaks the
+# regexes. This joins every visible-or-hidden text node with a space (scripts/styles skipped).
+SPACED_TEXT_JS = """() => {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const out = [];
+  let n;
+  while ((n = walker.nextNode())) {
+    const tag = n.parentElement ? n.parentElement.tagName : '';
+    if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'NOSCRIPT') continue;
+    const t = n.textContent.trim();
+    if (t) out.push(t);
+  }
+  return out.join(' ');
+}"""
+
+
 def via_playwright(store):
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
-        b = p.chromium.launch()
+        # PLAYWRIGHT_CHANNEL=msedge (or chrome) uses the browser already installed on this PC,
+        # handy for running locally without 'playwright install'. GitHub uses its own Chromium.
+        b = p.chromium.launch(channel=os.environ.get("PLAYWRIGHT_CHANNEL") or None)
         pg = b.new_page(user_agent=HEADERS["User-Agent"], locale="en-IN")
         pg.goto(store["url"], wait_until="domcontentloaded", timeout=60000)
         if store.get("wait_text"):
@@ -92,7 +110,7 @@ def via_playwright(store):
             pg.wait_for_function("t => document.body.textContent.includes(t)", arg=store["wait_text"], timeout=45000)
         else:
             pg.wait_for_timeout(5000)
-        text = pg.evaluate("document.body.textContent")
+        text = pg.evaluate(SPACED_TEXT_JS)
         b.close()
     return parse(store, text)
 
