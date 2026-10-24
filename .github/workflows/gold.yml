@@ -12,6 +12,13 @@ on:
       manual_rate_24k:
         description: "Optional 24K rate per gram"
         required: false
+      manual_rate_silver:
+        description: "Optional silver rate in Rs per GRAM (e.g. 198)"
+        required: false
+      manual_store:
+        description: "Store the manual rate is for (key from scraper/stores.json), e.g. chandukaka-chandannagar or chandukaka-alandi"
+        required: false
+        default: "chandukaka-chandannagar"
       notify:
         description: "Send notification now?"
         type: boolean
@@ -36,10 +43,14 @@ jobs:
         run: |
           pip install requests playwright
           playwright install --with-deps chromium
-      - name: Fetch rate
+      - name: Fetch rates (all stores)
+        id: fetch
+        continue-on-error: true   # one store failing must not stop the other from being saved
         env:
           MANUAL_RATE_22K: ${{ inputs.manual_rate_22k }}
           MANUAL_RATE_24K: ${{ inputs.manual_rate_24k }}
+          MANUAL_RATE_SILVER: ${{ inputs.manual_rate_silver }}
+          MANUAL_STORE: ${{ inputs.manual_store }}
         run: python scraper/fetch_rate.py
       - name: Analyze
         run: python scraper/analyze.py
@@ -72,3 +83,8 @@ jobs:
           CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
           DASHBOARD_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: python scraper/notify.py
+      - name: Fail run if any store could not be fetched
+        if: ${{ always() && steps.fetch.outcome == 'failure' }}
+        run: |
+          echo "At least one store could not be fetched - see the 'Fetch rates' step."
+          exit 1

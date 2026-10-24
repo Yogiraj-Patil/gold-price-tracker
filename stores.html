@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Metal Buy-Day Tracker</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="stylesheet" href="site.css">
+<script src="site.js"></script>
+<style>
+  :root{--bg:#faf8f3;--card:#fff;--text:#222;--muted:#777;--line:#e5e0d3;--buy:#1a7f37;--ok:#b7791f;--wait:#c53030;--gold:#d4a017;--up:#c53030;--down:#1a7f37}
+  @media (prefers-color-scheme:dark){:root{--bg:#161512;--card:#211f1b;--text:#eee;--muted:#999;--line:#38352e}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,sans-serif;padding:16px}
+  main{max-width:760px;margin:auto}
+  .muted{color:var(--muted);font-size:.85rem}
+  .card{background:var(--card);border-radius:12px;padding:16px;margin-bottom:14px;box-shadow:0 1px 4px #0002}
+  .metals{display:flex;gap:8px;margin-bottom:10px}
+  .metal{flex:1;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);font-size:1rem;cursor:pointer}
+  .metal.on{background:var(--gold);color:#222;border-color:var(--gold);font-weight:700}
+  .tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+  .tab{flex:1;min-width:140px;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);font-size:.95rem;cursor:pointer}
+  .tab.on{background:var(--gold);color:#222;border-color:var(--gold);font-weight:700}
+  .big{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:center}
+  .big b{display:block;font-size:1.6rem}
+  .pill{display:inline-block;padding:3px 10px;border-radius:999px;color:#fff;font-size:.8rem;font-weight:700}
+  .BUY{background:var(--buy)}.OK{background:var(--ok)}.WAIT{background:var(--wait)}.COL{background:#555}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;text-align:center;margin-top:12px}
+  .stats div{background:var(--bg);border-radius:8px;padding:8px}
+  .stats b{display:block;font-size:1.05rem}
+  .chartbox{position:relative;height:280px;margin-top:8px}
+  .tablewrap{overflow-x:auto;max-height:420px;overflow-y:auto}
+  table{width:100%;border-collapse:collapse;font-size:.95rem}
+  th,td{padding:7px 6px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  th{font-size:.8rem;color:var(--muted);font-weight:600;position:sticky;top:0;background:var(--card)}
+  .up{color:var(--up)}.down{color:var(--down)}
+  li{margin:6px 0}
+  .stale{color:var(--wait);font-size:.85rem}
+</style>
+</head>
+<body><main>
+  <header id="site-header"></header>
+
+  <div class="metals" id="metals"></div>
+  <div id="tabs" class="tabs"></div>
+
+  <div class="card">
+    <div class="big">
+      <div><b id="rate">–</b><span class="muted" id="rateLbl">rate / gram</span></div>
+      <div><b id="grams">–</b><span class="muted" id="gramsLbl">grams for ₹10,000</span></div>
+    </div>
+    <p style="text-align:center;margin:12px 0 0">Timing at this store: <span id="pill" class="pill COL">–</span>
+      <span class="muted" id="asof"></span></p>
+    <div id="stale" class="stale" style="text-align:center"></div>
+    <div class="stats" id="stats"></div>
+    <details style="margin-top:12px"><summary><b>Why this verdict?</b></summary><ul id="reasons"></ul></details>
+    <p class="muted" id="note"></p>
+  </div>
+
+  <div class="card">
+    <b>Price history</b>
+    <div class="chartbox"><canvas id="chart"></canvas></div>
+  </div>
+
+  <div class="card">
+    <b>Daily rates</b> <span class="muted">(newest first)</span>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Date</th><th id="thRate">₹/g</th><th>Change</th><th id="thBuys">₹10k buys</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+  <p class="muted" id="foot"></p>
+</main>
+<script>
+SiteHeader.render('stores');
+const COLORS = ['#d4a017', '#2b7de9', '#c2410c', '#16a34a', '#9333ea', '#0891b2', '#be185d'];
+const METALS = {
+  gold:   { label: 'Gold 22K', dp: 0, get: v => v },
+  silver: { label: 'Silver',   dp: 2, get: v => v.silver }
+};
+const cls = v => v.startsWith('BUY') ? 'BUY' : v === 'OK' ? 'OK' : v === 'WAIT' ? 'WAIT' : 'COL';
+const el = id => document.getElementById(id);
+const money = (n, dp) => '₹' + Number(n).toLocaleString('en-IN', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+let chart, summary, metal = 'gold', storeKey = null;
+
+function currentView() { return METALS[metal].get(summary); }
+
+function showStore() {
+  const M = METALS[metal], dp = M.dp, v = currentView();
+  document.querySelectorAll('.metal').forEach(b => b.classList.toggle('on', b.dataset.m === metal));
+  SiteHeader.setMetal(metal);
+  el('thRate').textContent = M.label + ' ₹/g';
+  const invest = (v && v.invest) || summary.invest;
+  el('thBuys').textContent = '₹' + invest.toLocaleString('en-IN') + ' buys';
+  el('rateLbl').textContent = M.label + ' rate / gram';
+  el('gramsLbl').textContent = 'grams for ' + money(invest, 0);
+  const tabs = el('tabs'); tabs.replaceChildren();
+
+  if (!v || !v.stores) {
+    ['rate', 'grams'].forEach(i => el(i).textContent = '–');
+    el('pill').textContent = 'no data'; el('pill').className = 'pill COL'; el('asof').textContent = '';
+    el('stats').replaceChildren(); el('reasons').replaceChildren(); el('rows').replaceChildren();
+    el('stale').textContent = 'No ' + M.label + ' rates recorded yet.'; if (chart) chart.destroy(); return;
+  }
+  v.stores.forEach((st, j) => { const b = document.createElement('button'); b.className = 'tab'; b.textContent = st.label;
+    b.onclick = () => { storeKey = st.key; showStore(); }; tabs.appendChild(b); });
+  let i = v.stores.findIndex(st => st.key === storeKey); if (i < 0) i = 0;
+  const s = v.stores[i], color = COLORS[summary.stores.findIndex(x => x.key === s.key) % COLORS.length];
+  storeKey = s.key;
+  tabs.querySelectorAll('.tab').forEach((t, j) => t.classList.toggle('on', j === i));
+  try { localStorage.setItem('metal', metal); history.replaceState(null, '', '?metal=' + metal + '&store=' + encodeURIComponent(s.key)); } catch (e) {}
+
+  el('rate').textContent = money(s.rate, dp);
+  el('grams').textContent = s.grams_for_10k.toFixed(dp ? 2 : 3) + ' g';
+  el('pill').textContent = s.verdict; el('pill').className = 'pill ' + cls(s.verdict);
+  el('asof').textContent = ' · as of ' + s.as_of + ' · ' + s.days_of_data + ' days recorded';
+  el('stale').textContent = s.stale ? 'No fresh reading: this store is left out of the cross-store comparison.' : '';
+  el('note').textContent = s.note ? 'Note: ' + s.note : '';
+  el('reasons').replaceChildren(...s.reasons.map(r => { const li = document.createElement('li'); li.textContent = r; return li; }));
+
+  const h = s.history, rates = h.map(x => x.rate), last30 = rates.slice(-30);
+  const avg = last30.reduce((a, b) => a + b, 0) / last30.length, vs = (s.rate - avg) / avg * 100;
+  const stats = [['30-day average', money(avg, dp)], ['30-day low', money(Math.min(...last30), dp)],
+    ['30-day high', money(Math.max(...last30), dp)], ['vs average', (vs >= 0 ? '+' : '') + vs.toFixed(1) + '%'],
+    ['days recorded', String(h.length)]];
+  el('stats').replaceChildren(...stats.map(([k, val]) => { const d = document.createElement('div');
+    d.innerHTML = '<b></b><span class="muted"></span>'; d.querySelector('b').textContent = val; d.querySelector('span').textContent = k; return d; }));
+
+  if (chart) chart.destroy();
+  chart = new Chart(el('chart'), {
+    type: 'line',
+    data: { labels: h.map(x => x.date), datasets: [
+      { label: s.label + ' ' + M.label + ' ₹/g', data: rates, borderColor: color, backgroundColor: color, tension: .25, pointRadius: 2 },
+      { label: '30-day average', data: rates.map(() => avg), borderColor: '#888', borderDash: [6, 4], pointRadius: 0 } ] },
+    options: { responsive: true, maintainAspectRatio: false, scales: { y: { ticks: { callback: x => '₹' + x } } },
+               interaction: { mode: 'index', intersect: false } }
+  });
+
+  const tbody = el('rows'); tbody.replaceChildren();
+  [...h].reverse().forEach((x, k, arr) => {
+    const prev = arr[k + 1], tr = document.createElement('tr'), d = prev ? x.rate - prev.rate : null;
+    const cells = [x.date, money(x.rate, dp),
+      d === null ? '–' : (Math.abs(d) < 1e-9 ? '0' : (d > 0 ? '+' : '−') + money(Math.abs(d), dp)),
+      (invest / x.rate).toFixed(dp ? 2 : 3) + ' g'];
+    cells.forEach((c, j) => { const td = document.createElement('td'); td.textContent = c;
+      if (j === 2 && d && Math.abs(d) > 1e-9) td.className = d > 0 ? 'up' : 'down'; tr.appendChild(td); });
+    tbody.appendChild(tr);
+  });
+}
+
+fetch('data/summary.json?' + Date.now()).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(v => {
+  summary = v;
+  const q = new URLSearchParams(location.search);
+  let m = q.get('metal'); try { m = m || localStorage.getItem('metal'); } catch (e) {}
+  metal = METALS[m] ? m : 'gold';
+  storeKey = q.get('store');
+  const box = el('metals');
+  Object.entries(METALS).forEach(([k, M]) => { const b = document.createElement('button'); b.className = 'metal'; b.dataset.m = k;
+    b.textContent = M.label; b.onclick = () => { metal = k; showStore(); }; box.appendChild(b); });
+  showStore();
+  el('foot').textContent = 'Updated ' + v.generated_at + ' IST · Rates are ₹ per gram. Store rates exclude making charges and GST. Statistical comparison only, not financial advice.';
+}).catch(() => { el('rate').textContent = 'No data yet'; });
+</script>
+</body>
+</html>
