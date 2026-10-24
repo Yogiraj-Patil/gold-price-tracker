@@ -49,7 +49,11 @@
       "Bash(python _pi3.py)",
       "PowerShell(Get-CimInstance Win32_Process -Filter \"Name='python.exe'\" | Where-Object { $_.CommandLine -match 'http.server 876' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; \"server stopped\")",
       "Bash(grep -n \"<title>\\\\|<h1>\" stores.html index.html; stat -c '%y %n' stores.html index.html)",
-      "PowerShell(Get-CimInstance Win32_Process -Filter \"Name='python.exe'\" | Where-Object { $_.CommandLine -match 'http.server 87' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; \"servers stopped\")"
+      "PowerShell(Get-CimInstance Win32_Process -Filter \"Name='python.exe'\" | Where-Object { $_.CommandLine -match 'http.server 87' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; \"servers stopped\")",
+      "Bash(cp data/history.csv /tmp/h1.bak)",
+      "Bash(cp data/chandukaka-alandi/history.csv /tmp/h2.bak)",
+      "Bash(PLAYWRIGHT_CHANNEL=msedge python scraper/fetch_rate.py)",
+      "Bash(python \"C:/Users/yopatil/AppData/Local/Temp/claude/D--Things-Outside-GoldPrices/2dd53e64-d4a5-4af9-b05b-5d868ce5aaa0/scratchpad/dbg_cs.py\")"
     ]
   }
 }

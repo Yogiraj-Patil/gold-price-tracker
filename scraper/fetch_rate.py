@@ -111,8 +111,15 @@ def via_playwright(store):
         else:
             pg.wait_for_timeout(5000)
         text = pg.evaluate(SPACED_TEXT_JS)
+        title = pg.title()
         b.close()
-    return parse(store, text)
+    data = parse(store, text)
+    if data is None:
+        # Make a silent parse failure explain itself in the Actions log.
+        i = text.find(store["anchor"]) if store.get("anchor") else 0
+        raise RuntimeError(f"page loaded (title {title!r}) but no 22K rate matched; "
+                           f"text near the rates: {text[max(i, 0):max(i, 0) + 300]!r}")
+    return data
 
 
 def via_manual(store):
