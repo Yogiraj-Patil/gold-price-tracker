@@ -53,7 +53,10 @@
       "Bash(cp data/history.csv /tmp/h1.bak)",
       "Bash(cp data/chandukaka-alandi/history.csv /tmp/h2.bak)",
       "Bash(PLAYWRIGHT_CHANNEL=msedge python scraper/fetch_rate.py)",
-      "Bash(python \"C:/Users/yopatil/AppData/Local/Temp/claude/D--Things-Outside-GoldPrices/2dd53e64-d4a5-4af9-b05b-5d868ce5aaa0/scratchpad/dbg_cs.py\")"
+      "Bash(python \"C:/Users/yopatil/AppData/Local/Temp/claude/D--Things-Outside-GoldPrices/2dd53e64-d4a5-4af9-b05b-5d868ce5aaa0/scratchpad/dbg_cs.py\")",
+      "Bash(DASHBOARD_URL=https://yogiraj-patil.github.io/gold-price-tracker/ NOTIFY_CHANNELS=none python notify.py)",
+      "Bash(DASHBOARD_URL=https://yogiraj-patil.github.io/gold-price-tracker/ python -)",
+      "Bash(DASHBOARD_URL=https://example.github.io/repo/ python -c \"import sys; sys.path.insert\\(0,'scraper'\\); import notify; print\\(len\\(notify.email_html\\(*notify.build\\(\\)[:2]\\)\\), 'chars of html OK'\\)\")"
     ]
   }
 }

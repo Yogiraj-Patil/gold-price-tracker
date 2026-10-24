@@ -30,7 +30,7 @@ scraper/stores.json     <- THE ONLY FILE NEEDED TO ADD A STORE (data, no code)
 scraper/stores.py       loads stores.json; paths per store; SUMMARY_PATH
 scraper/fetch_rate.py   fetches every store, appends one row/day to each store's history.csv
 scraper/analyze.py      per-store verdicts + cross-store summary (gold and silver) -> JSON
-scraper/notify.py       sends ONE combined message (email / ntfy / Meta WhatsApp / CallMeBot)
+scraper/notify.py       sends ONE combined message (HTML+text email with dashboard button / ntfy / Meta WhatsApp / CallMeBot)
 .github/workflows/gold.yml   Actions: install -> fetch -> analyze -> commit data -> notify
 index.html, stores.html      dashboard pages (overview; per-store). Read data/summary.json
 site.js, site.css       shared header/menu/title for all pages (edit site.js to change them)
@@ -54,6 +54,23 @@ days or >=1% below the 30-day average; WAIT = priciest 25% or >=1% above; else O
 last 5 days of a month. Cross-store: cheapest non-stale store (reading <= 2 days old) is recommended; timing is
 judged on the best price across stores using only days all stores share, falling back to the store with the longest
 history. Amounts: `INVEST` (gold) and `INVEST_SILVER` in `analyze.py`.
+
+### Notifications (`scraper/notify.py`)
+One combined message per run (not one per store): headline verdict + cheapest store, each store's latest gold rate,
+the reasons, a SILVER section, then the dashboard link. It is built once by `build()` and sent by independent
+channels; one failing channel never blocks the others (the run exits 1 if any failed).
+| channel | enabled by (GitHub secret/variable) | notes |
+|---|---|---|
+| email | `SMTP_USER`, `SMTP_PASS` (Gmail app password), `MAIL_TO` (comma-separated list; may be a repo **variable** or secret) | sent as Bcc, so recipients don't see each other. **Multipart: plain text + HTML.** The dashboard link is the **first line** of the plain-text part and a gold **"Open dashboard" button** at the top of the HTML part (`email_html()`); the `Dashboard: <url>` line in the body is also made clickable. |
+| ntfy phone push | `NTFY_TOPIC` | same body; the `Click` header makes tapping the notification open the dashboard |
+| WhatsApp (Meta Cloud API) | `WA_TOKEN`, `WA_PHONE_ID`, `WA_RECIPIENTS`, `WA_TEMPLATE` | template with 4 variables ({{1}} verdict, {{2}} gold rate, {{3}} grams, {{4}} reasons incl. a silver line); see `WHATSAPP_SETUP.md` |
+| WhatsApp (CallMeBot, backup) | `CALLMEBOT_RECIPIENTS` = `phone:apikey, ...` | optional |
+The dashboard URL comes from env `DASHBOARD_URL`, set in the workflow's Notify step to
+`https://<owner>.github.io/<repo>/` (it follows repo renames). Without it, no link is added anywhere.
+`NOTIFY_CHANNELS` (`all`, or e.g. `email`) limits channels; notifications are sent only on manual /
+cron-job.org (`workflow_dispatch`) runs with `notify=true`, never on GitHub's own scheduled runs.
+Gotcha: keep important links near the top of a message - a link in the last line of a long email gets missed.
+To test the email layout without sending: `python -c "import sys; sys.path.insert(0,'scraper'); import notify; print(notify.email_html(*notify.build()[:2]))"` with `DASHBOARD_URL` set.
 
 ## 3. HOW TO ADD A STORE (the task you will most often be asked to do)
 Goal: add ONE object to the JSON array in `scraper/stores.json`. No Python/HTML changes are normally needed;
