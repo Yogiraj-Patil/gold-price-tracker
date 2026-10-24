@@ -1,6 +1,7 @@
 {
   "as_of": "2026-10-24",
   "rate_22k": 13123.0,
+  "rate": 13123.0,
   "grams_for_10k": 0.762,
   "days_of_data": 11,
   "invest": 10000,
@@ -17,6 +18,8 @@
   "pct_vs_avg": -2.2,
   "rank_30d": 1,
   "window": 11,
+  "store": "chandukaka-chandannagar",
+  "store_label": "Chandukaka Chandannagar",
   "history": [
     {
       "date": "2026-10-14",
@@ -62,5 +65,24 @@
       "date": "2026-10-24",
       "rate": 13123.0
     }
-  ]
+  ],
+  "silver": {
+    "as_of": "2026-10-24",
+    "rate_silver": 198.0,
+    "rate": 198.0,
+    "grams_for_10k": 25.2525,
+    "days_of_data": 1,
+    "invest": 5000,
+    "verdict": "COLLECTING DATA",
+    "reasons": [
+      "Only 1 day(s) of history so far; need 7 to compare.",
+      "Today: ₹198/g -> ₹5,000 buys 25.253 g."
+    ],
+    "history": [
+      {
+        "date": "2026-10-24",
+        "rate": 198.0
+      }
+    ]
+  }
 }

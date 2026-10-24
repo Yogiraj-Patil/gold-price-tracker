@@ -9,18 +9,38 @@ import urllib.parse
 import urllib.request
 from email.message import EmailMessage
 
-VERDICT = os.path.join(os.path.dirname(__file__), "..", "data", "verdict.json")
+import stores
+
 DASHBOARD = os.environ.get("DASHBOARD_URL", "")
+CURRENT = {}  # the summary being sent (read by the WhatsApp template sender)
 
 
 def build():
-    v = json.load(open(VERDICT, encoding="utf-8"))
-    subject = f"Gold today: {v['verdict']} - ₹{v['rate_22k']:,.0f}/g ({v['grams_for_10k']:.3f} g for ₹10k)"
-    body = f"{v['verdict']}\n\n" + "\n".join(f"• {r}" for r in v["reasons"])
+    """One combined message: common verdict, cheapest store, and every store's latest rate."""
+    with open(stores.SUMMARY_PATH, encoding="utf-8") as f:
+        v = json.load(f)
+    if not v.get("best_store"):
+        subject = "Gold today: no recent rates available"
+        return subject, subject, v
+    subject = (f"Gold today: {v['verdict']} - buy at {v['best_label']} ₹{v['rate']:,.0f}/g "
+               f"({v['grams_for_10k']:.3f} g for ₹10k)")
+    lines = []
+    for r in sorted(v["stores"], key=lambda r: r["rate"]):
+        tag = " (stale)" if r["stale"] else ""
+        lines.append(f"• {r['label']}: ₹{r['rate']:,.0f}/g -> {r['grams_for_10k']:.3f} g{tag}")
+    body = (f"{v['verdict']}\nBest store today: {v['best_label']}\n\n" + "\n".join(lines)
+            + "\n\nWhy:\n" + "\n".join(f"• {r}" for r in v["reasons"]))
+    sv = v.get("silver")
+    if sv and sv.get("best_store"):
+        body += f"\n\nSILVER: {sv['verdict']} - best store {sv['best_label']}\n"
+        body += "\n".join(f"• {r['label']}: ₹{r['rate']:,.2f}/g -> {r['grams_for_10k']:.2f} g for ₹{sv['invest']:,}"
+                          + (" (stale)" if r["stale"] else "")
+                          for r in sorted(sv["stores"], key=lambda r: r["rate"]))
+        body += "\n" + "\n".join(f"• {r}" for r in sv["reasons"][:3])
     if DASHBOARD:
         body += f"\n\nDashboard: {DASHBOARD}"
     body += "\n\n(Statistical comparison with recent Chandukaka Saraf 22K rates; not financial advice.)"
-    return subject, body
+    return subject, body, v
 
 
 def split_list(value):
@@ -79,9 +99,15 @@ def send_meta_whatsapp(subject, body):
     if not (token and phone_id and recipients):
         print("Meta WhatsApp not configured; skipping.")
         return
-    v = json.load(open(VERDICT, encoding="utf-8"))
+    v = CURRENT["verdict"]
+    if not v.get("best_store"):
+        return
     template = os.environ.get("WA_TEMPLATE") or "gold_daily"
-    reasons = re.sub(r"\s+", " ", " | ".join(v["reasons"][:4]))[:900]
+    extra = ""
+    sv = v.get("silver")
+    if sv and sv.get("best_store"):
+        extra = f" | Silver: {sv['verdict']}, best {sv['best_label']} at Rs {sv['rate']:,.2f}/g"
+    reasons = re.sub(r"\s+", " ", f"Buy at {v['best_label']}. " + " | ".join(v["reasons"][:5]) + extra)[:900]
     tpl = {"name": template, "language": {"code": os.environ.get("WA_LANG") or "en"}}
     if template != "hello_world":
         vals = [v["verdict"], f"{v['rate_22k']:,.0f}", f"{v['grams_for_10k']:.3f}", reasons]
@@ -124,12 +150,16 @@ def send_push(subject, body):
 
 
 if __name__ == "__main__":
-    subject, body = build()
-    print(subject, body, sep="\n")
     failed = False
     # NOTIFY_CHANNELS: "all" (default) or a list such as "email" (evening run = email only)
     wanted = set(split_list((os.environ.get("NOTIFY_CHANNELS") or "all").lower()))
     channels = {send_email: "email", send_push: "push", send_meta_whatsapp: "whatsapp", send_whatsapp: "whatsapp"}
+    if not os.path.exists(stores.SUMMARY_PATH):
+        print("No summary.json yet; nothing to send.", file=sys.stderr)
+        sys.exit(1)
+    subject, body, v = build()
+    CURRENT["verdict"] = v
+    print(subject, body, sep="\n")
     for fn, name in channels.items():
         if "all" not in wanted and name not in wanted:
             print(f"Skipping {fn.__name__} (not in NOTIFY_CHANNELS).")

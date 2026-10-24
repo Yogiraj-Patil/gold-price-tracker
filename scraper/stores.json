@@ -1,0 +1,29 @@
+[
+  {
+    "key": "chandukaka-chandannagar",
+    "label": "Chandukaka Chandannagar",
+    "url": "https://chandukakasaraf.in/todays-gold-rate/",
+    "data_dir": "data",
+    "render": "http",
+    "rate_22k_re": "22\\s*KT\\s*Gold\\s*₹\\s*([\\d,]+)",
+    "rate_24k_re": "24\\s*KT\\s*Gold\\s*₹\\s*([\\d,]+)",
+    "updated_re": "Updated On:?\\s*(\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2})",
+    "rate_silver_re": "Silver\\s*₹\\s*([\\d,.]+)",
+    "silver_per_grams": 1000
+  },
+  {
+    "key": "chandukaka-alandi",
+    "label": "Chandukaka Alandi",
+    "url": "https://csjewels.com/",
+    "data_dir": "data/chandukaka-alandi",
+    "render": "browser",
+    "wait_text": "Updated On",
+    "anchor": "Metal Rate",
+    "rate_22k_re": "\\b22K\\s+(\\d[\\d,]*)",
+    "rate_24k_re": "\\b24K\\s+(\\d[\\d,]*)",
+    "updated_re": "Updated On,?:?\\s*(\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2})",
+    "note": "Rates are labelled 'applicable for online purchase only'",
+    "rate_silver_re": "\\bSilver\\s+(\\d[\\d,.]*)",
+    "silver_per_grams": 1
+  }
+]

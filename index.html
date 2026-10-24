@@ -3,47 +3,163 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Gold Buy-Day Tracker</title>
+<title>Metal Buy-Day Tracker</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="stylesheet" href="site.css">
+<script src="site.js"></script>
 <style>
-  :root{--bg:#faf8f3;--card:#fff;--text:#222;--muted:#777;--buy:#1a7f37;--ok:#b7791f;--wait:#c53030;--line:#d4a017}
-  @media (prefers-color-scheme:dark){:root{--bg:#161512;--card:#211f1b;--text:#eee;--muted:#999}}
+  :root{--bg:#faf8f3;--card:#fff;--text:#222;--muted:#777;--line:#e5e0d3;--buy:#1a7f37;--ok:#b7791f;--wait:#c53030;--gold:#d4a017}
+  @media (prefers-color-scheme:dark){:root{--bg:#161512;--card:#211f1b;--text:#eee;--muted:#999;--line:#38352e}}
+  *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,sans-serif;padding:16px}
-  main{max-width:720px;margin:auto}
+  main{max-width:760px;margin:auto}
+  .muted{color:var(--muted);font-size:.85rem}
   .card{background:var(--card);border-radius:12px;padding:16px;margin-bottom:14px;box-shadow:0 1px 4px #0002}
+  .metals{display:flex;gap:8px;margin-bottom:14px}
+  .metal{flex:1;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);font-size:1rem;cursor:pointer}
+  .metal.on{background:var(--gold);color:#222;border-color:var(--gold);font-weight:700}
   .badge{font-size:2rem;font-weight:800;text-align:center;padding:14px;border-radius:10px;color:#fff}
   .BUY{background:var(--buy)}.OK{background:var(--ok)}.WAIT{background:var(--wait)}.COL{background:#555}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:center}
-  .grid b{display:block;font-size:1.4rem}.muted{color:var(--muted);font-size:.85rem}
+  .best{text-align:center;margin:12px 0 4px;font-size:1.1rem}
+  .best b{font-size:1.5rem}
+  details{margin-top:10px}summary{cursor:pointer;font-weight:600}
   li{margin:6px 0}
+  .tablewrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.95rem}
+  th,td{padding:8px 6px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  th{font-size:.8rem;color:var(--muted);font-weight:600}
+  tr.cheapest td{font-weight:700;background:#d4a01722}
+  .pill{display:inline-block;padding:2px 8px;border-radius:999px;color:#fff;font-size:.75rem;font-weight:700}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+  .chartbox{position:relative;height:300px;margin-top:8px}
+  .stale{color:var(--wait);font-size:.75rem}
 </style>
 </head>
 <body><main>
-  <h1>Gold Buy-Day Tracker <span class="muted">Chandukaka Saraf · 22K · ₹10,000</span></h1>
-  <div class="card"><div id="badge" class="badge COL">Loading…</div></div>
-  <div class="card grid">
-    <div><b id="rate">–</b><span class="muted">22K rate / gram</span></div>
-    <div><b id="grams">–</b><span class="muted">grams for ₹10,000</span></div>
+  <header id="site-header"></header>
+  <div class="metals" id="metals"></div>
+
+  <div class="card">
+    <div id="badge" class="badge COL">Loading…</div>
+    <div class="best" id="best"></div>
+    <div class="muted" id="basis" style="text-align:center"></div>
+    <details><summary>Why?</summary><ul id="reasons"></ul></details>
   </div>
-  <div class="card"><b>Why?</b><ul id="reasons"></ul></div>
-  <div class="card"><canvas id="chart" height="220"></canvas></div>
+
+  <div class="card">
+    <b id="tableTitle">Latest price at each store</b>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Store</th><th id="thRate">₹/g</th><th id="thBuys">₹10k buys</th><th>vs cheapest</th><th>Own timing</th><th>As of</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p class="muted" id="notes"></p>
+  </div>
+
+  <div class="card">
+    <b id="chartTitle">Price history, all stores</b>
+    <div class="chartbox"><canvas id="chart"></canvas></div>
+  </div>
   <p class="muted" id="foot"></p>
 </main>
 <script>
-fetch('data/verdict.json?'+Date.now()).then(r=>r.json()).then(v=>{
-  const b=document.getElementById('badge');
-  b.textContent=v.verdict;
-  b.className='badge '+(v.verdict.startsWith('BUY')?'BUY':v.verdict==='OK'?'OK':v.verdict==='WAIT'?'WAIT':'COL');
-  document.getElementById('rate').textContent='₹'+Math.round(v.rate_22k).toLocaleString('en-IN');
-  document.getElementById('grams').textContent=v.grams_for_10k.toFixed(3)+' g';
-  document.getElementById('reasons').innerHTML=v.reasons.map(r=>'<li>'+r+'</li>').join('');
-  document.getElementById('foot').textContent='Data as of '+v.as_of+' · '+v.days_of_data+' days recorded · Statistical comparison only, not financial advice.';
-  const h=v.history, avg=v.avg_30d;
-  new Chart(document.getElementById('chart'),{type:'line',data:{labels:h.map(x=>x.date),datasets:[
-    {label:'22K ₹/g',data:h.map(x=>x.rate),borderColor:'#d4a017',tension:.25,pointRadius:2},
-    ...(avg?[{label:'30-day avg',data:h.map(()=>avg),borderColor:'#888',borderDash:[6,4],pointRadius:0}]:[])]},
-    options:{scales:{y:{ticks:{callback:v=>'₹'+v}}}}});
-}).catch(e=>{document.getElementById('badge').textContent='No data yet'});
+SiteHeader.render('overview');
+const COLORS = ['#d4a017', '#2b7de9', '#c2410c', '#16a34a', '#9333ea', '#0891b2', '#be185d'];
+const METALS = {
+  gold:   { label: 'Gold 22K', dp: 0, get: v => v },
+  silver: { label: 'Silver',   dp: 2, get: v => v.silver }
+};
+const cls = v => v.startsWith('BUY') ? 'BUY' : v === 'OK' ? 'OK' : v === 'WAIT' ? 'WAIT' : 'COL';
+const el = id => document.getElementById(id);
+const money = (n, dp) => '₹' + Number(n).toLocaleString('en-IN', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+let chart, summary, metal = 'gold';
+
+function pickMetal() {
+  let m = new URLSearchParams(location.search).get('metal');
+  try { m = m || localStorage.getItem('metal'); } catch (e) {}
+  return METALS[m] ? m : 'gold';
+}
+
+function render() {
+  const M = METALS[metal], dp = M.dp, v = M.get(summary);
+  document.querySelectorAll('.metal').forEach(b => b.classList.toggle('on', b.dataset.m === metal));
+  try { localStorage.setItem('metal', metal); } catch (e) {}
+  SiteHeader.setMetal(metal);
+  el('thRate').textContent = M.label + ' ₹/g';
+  const invest = (v && v.invest) || summary.invest;
+  el('thBuys').textContent = '₹' + invest.toLocaleString('en-IN') + ' buys';
+  el('tableTitle').textContent = 'Latest ' + M.label + ' price at each store';
+  el('chartTitle').textContent = M.label + ' price history, all stores';
+
+  if (!v || !v.stores) {
+    el('badge').textContent = 'No ' + M.label + ' data yet'; el('badge').className = 'badge COL';
+    el('best').textContent = ''; el('basis').textContent = ''; el('reasons').replaceChildren();
+    el('rows').replaceChildren(); el('notes').textContent = ''; if (chart) chart.destroy(); return;
+  }
+  el('badge').textContent = v.verdict;
+  el('badge').className = 'badge ' + cls(v.verdict);
+  if (v.best_store) {
+    el('best').innerHTML = 'Buy at <b></b>';
+    el('best').querySelector('b').textContent = v.best_label;
+    el('best').append(' · ' + money(v.rate, dp) + '/g · ' + v.grams_for_10k.toFixed(dp ? 2 : 3) + ' g for ' + money(v.invest, 0));
+    el('basis').textContent = 'Timing judged on ' + v.timing_basis;
+  } else { el('best').textContent = ''; el('basis').textContent = ''; }
+  el('reasons').replaceChildren(...v.reasons.map(r => { const li = document.createElement('li'); li.textContent = r; return li; }));
+
+  const live = v.stores.filter(s => !s.stale);
+  const minRate = live.length ? Math.min(...live.map(s => s.rate)) : null;
+  const rows = [...v.stores].sort((a, b) => a.rate - b.rate);
+  const tbody = el('rows'); tbody.replaceChildren();
+  rows.forEach(s => {
+    const tr = document.createElement('tr');
+    if (!s.stale && s.rate === minRate) tr.className = 'cheapest';
+    const idx = summary.stores.findIndex(x => x.key === s.key);
+    const diff = s.rate - minRate;
+    const cells = [null, money(s.rate, dp), s.grams_for_10k.toFixed(dp ? 2 : 3) + ' g',
+      s.stale || minRate === null ? '–' : (diff === 0 ? 'cheapest' : '+' + money(diff, dp) + '/g'), null, s.as_of];
+    cells.forEach((c, i) => {
+      const td = document.createElement('td');
+      if (i === 0) {
+        td.innerHTML = '<span class="dot"></span><span class="n"></span>';
+        td.querySelector('.dot').style.background = COLORS[idx % COLORS.length];
+        const a = document.createElement('a'); a.href = 'stores.html?metal=' + metal + '&store=' + encodeURIComponent(s.key);
+        a.textContent = s.label; a.style.color = 'inherit'; td.querySelector('.n').appendChild(a);
+        if (s.stale) { const st = document.createElement('div'); st.className = 'stale'; st.textContent = 'stale - not compared'; td.appendChild(st); }
+      } else if (i === 4) {
+        const p = document.createElement('span'); p.className = 'pill ' + cls(s.verdict); p.textContent = s.verdict; td.appendChild(p);
+      } else td.textContent = c;
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  el('notes').textContent = v.stores.filter(s => s.note).map(s => s.label + ': ' + s.note).join(' · ');
+
+  const dates = [...new Set(v.stores.flatMap(s => s.history.map(h => h.date)))].sort();
+  if (chart) chart.destroy();
+  chart = new Chart(el('chart'), {
+    type: 'line',
+    data: { labels: dates, datasets: v.stores.map(s => {
+      const i = summary.stores.findIndex(x => x.key === s.key);
+      const m = Object.fromEntries(s.history.map(h => [h.date, h.rate]));
+      return { label: s.label, data: dates.map(d => m[d] ?? null), borderColor: COLORS[i % COLORS.length],
+               backgroundColor: COLORS[i % COLORS.length], tension: .25, pointRadius: 2, spanGaps: true };
+    }) },
+    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+               scales: { y: { ticks: { callback: x => '₹' + x } } } }
+  });
+}
+
+fetch('data/summary.json?' + Date.now()).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(v => {
+  summary = v;
+  const box = el('metals');
+  Object.entries(METALS).forEach(([k, M]) => { const b = document.createElement('button'); b.className = 'metal'; b.dataset.m = k;
+    b.textContent = M.label; b.onclick = () => { metal = k; render(); }; box.appendChild(b); });
+  metal = pickMetal();
+  render();
+  el('foot').textContent = 'Updated ' + v.generated_at + ' IST · Rates are ₹ per gram. Statistical comparison only, not financial advice. Store rates exclude making charges and GST.';
+}).catch(() => { el('badge').textContent = 'No data yet'; });
 </script>
 </body>
 </html>
