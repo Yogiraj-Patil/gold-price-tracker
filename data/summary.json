@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26 16:33:37",
+  "generated_at": "2026-10-26 18:57:19",
   "invest": 10000,
   "metal": "gold",
   "stores": [
@@ -79,14 +79,14 @@
       "key": "chandukaka-alandi",
       "label": "Chandukaka Alandi",
       "note": "Rates are labelled 'applicable for online purchase only'",
-      "rate": 13154.0,
-      "grams_for_10k": 0.7602,
+      "rate": 13181.0,
+      "grams_for_10k": 0.7587,
       "as_of": "2026-10-26",
       "stale": false,
       "verdict": "COLLECTING DATA",
       "reasons": [
         "Only 4 day(s) of history so far; need 7 to compare.",
-        "Today: ₹13,154/g -> ₹10,000 buys 0.760 g."
+        "Today: ₹13,181/g -> ₹10,000 buys 0.759 g."
       ],
       "days_of_data": 4,
       "history": [
@@ -104,33 +104,33 @@
         },
         {
           "date": "2026-10-26",
-          "rate": 13154.0
+          "rate": 13181.0
         }
       ]
     }
   ],
   "ranking": [
-    "chandukaka-alandi",
-    "chandukaka-chandannagar"
+    "chandukaka-chandannagar",
+    "chandukaka-alandi"
   ],
   "verdict": "BUY NOW",
   "timing_basis": "Chandukaka Chandannagar's own price history (13 days; only 4 day(s) are shared by all stores so far)",
-  "best_store": "chandukaka-alandi",
-  "best_label": "Chandukaka Alandi",
-  "rate": 13154.0,
-  "grams_for_10k": 0.7602,
+  "best_store": "chandukaka-chandannagar",
+  "best_label": "Chandukaka Chandannagar",
+  "rate": 13178.0,
+  "grams_for_10k": 0.7588,
   "reasons": [
-    "Cheapest today: Chandukaka Alandi at ₹13,154/g -> ₹10,000 buys 0.760 g.",
-    "Chandukaka Chandannagar is ₹24/g (0.18%) dearer: the same ₹10,000 of gold costs ₹18 more there (0.0014 g less for the same money).",
+    "Cheapest today: Chandukaka Chandannagar at ₹13,178/g -> ₹10,000 buys 0.759 g.",
+    "Chandukaka Alandi is ₹3/g (0.02%) dearer: the same ₹10,000 of gold costs ₹2 more there (0.0001 g less for the same money).",
     "Timing is judged on Chandukaka Chandannagar's own price history (13 days; only 4 day(s) are shared by all stores so far).",
     "Today is one of the cheaper days of the last month.",
     "Today ₹13,178/g -> ₹10,000 buys 0.759 g (30-day average buys 0.748 g, best 0.762 g, worst 0.739 g).",
     "Rate is 1.5% below the 13-day average (₹13,376).",
     "Cheapest-rank: 4 of 13 days (1 = cheapest)."
   ],
-  "rate_22k": 13154.0,
+  "rate_22k": 13178.0,
   "silver": {
-    "generated_at": "2026-10-26 16:33:37",
+    "generated_at": "2026-10-26 18:57:19",
     "invest": 5000,
     "metal": "silver",
     "stores": [
@@ -167,14 +167,14 @@
         "key": "chandukaka-alandi",
         "label": "Chandukaka Alandi",
         "note": "Rates are labelled 'applicable for online purchase only'",
-        "rate": 199.0,
-        "grams_for_10k": 25.1256,
+        "rate": 200.0,
+        "grams_for_10k": 25.0,
         "as_of": "2026-10-26",
         "stale": false,
         "verdict": "COLLECTING DATA",
         "reasons": [
           "Only 4 day(s) of history so far; need 7 to compare.",
-          "Today: ₹199/g -> ₹5,000 buys 25.126 g."
+          "Today: ₹200/g -> ₹5,000 buys 25.000 g."
         ],
         "days_of_data": 4,
         "history": [
@@ -192,7 +192,7 @@
           },
           {
             "date": "2026-10-26",
-            "rate": 199.0
+            "rate": 200.0
           }
         ]
       }
@@ -209,10 +209,10 @@
     "grams_for_10k": 25.2525,
     "reasons": [
       "Cheapest today: Chandukaka Chandannagar at ₹198.00/g -> ₹5,000 buys 25.253 g.",
-      "Chandukaka Alandi is ₹1.00/g (0.51%) dearer: the same ₹5,000 of silver costs ₹25 more there (0.1269 g less for the same money).",
+      "Chandukaka Alandi is ₹2.00/g (1.01%) dearer: the same ₹5,000 of silver costs ₹51 more there (0.2525 g less for the same money).",
       "Timing is judged on Chandukaka Alandi's own price history (4 days; only 3 day(s) are shared by all stores so far).",
       "Only 4 day(s) of history so far; need 7 to compare.",
-      "Today: ₹199/g -> ₹5,000 buys 25.126 g."
+      "Today: ₹200/g -> ₹5,000 buys 25.000 g."
     ]
   }
 }

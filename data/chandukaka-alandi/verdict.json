@@ -1,14 +1,14 @@
 {
   "as_of": "2026-10-26",
-  "rate_22k": 13154.0,
-  "rate": 13154.0,
-  "grams_for_10k": 0.7602,
+  "rate_22k": 13181.0,
+  "rate": 13181.0,
+  "grams_for_10k": 0.7587,
   "days_of_data": 4,
   "invest": 10000,
   "verdict": "COLLECTING DATA",
   "reasons": [
     "Only 4 day(s) of history so far; need 7 to compare.",
-    "Today: ₹13,154/g -> ₹10,000 buys 0.760 g."
+    "Today: ₹13,181/g -> ₹10,000 buys 0.759 g."
   ],
   "store": "chandukaka-alandi",
   "store_label": "Chandukaka Alandi",
@@ -27,20 +27,20 @@
     },
     {
       "date": "2026-10-26",
-      "rate": 13154.0
+      "rate": 13181.0
     }
   ],
   "silver": {
     "as_of": "2026-10-26",
-    "rate_silver": 199.0,
-    "rate": 199.0,
-    "grams_for_10k": 25.1256,
+    "rate_silver": 200.0,
+    "rate": 200.0,
+    "grams_for_10k": 25.0,
     "days_of_data": 4,
     "invest": 5000,
     "verdict": "COLLECTING DATA",
     "reasons": [
       "Only 4 day(s) of history so far; need 7 to compare.",
-      "Today: ₹199/g -> ₹5,000 buys 25.126 g."
+      "Today: ₹200/g -> ₹5,000 buys 25.000 g."
     ],
     "history": [
       {
@@ -57,7 +57,7 @@
       },
       {
         "date": "2026-10-26",
-        "rate": 199.0
+        "rate": 200.0
       }
     ]
   }
