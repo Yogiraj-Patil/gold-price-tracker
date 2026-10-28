@@ -1,14 +1,14 @@
 {
   "as_of": "2026-10-28",
-  "rate_22k": 13228.0,
-  "rate": 13228.0,
-  "grams_for_10k": 0.756,
+  "rate_22k": 13246.0,
+  "rate": 13246.0,
+  "grams_for_10k": 0.7549,
   "days_of_data": 6,
   "invest": 10000,
   "verdict": "COLLECTING DATA",
   "reasons": [
     "Only 6 day(s) of history so far; need 7 to compare.",
-    "Today: ₹13,228/g -> ₹10,000 buys 0.756 g."
+    "Today: ₹13,246/g -> ₹10,000 buys 0.755 g."
   ],
   "store": "chandukaka-alandi",
   "store_label": "Chandukaka Alandi",
@@ -35,7 +35,7 @@
     },
     {
       "date": "2026-10-28",
-      "rate": 13228.0
+      "rate": 13246.0
     }
   ],
   "silver": {

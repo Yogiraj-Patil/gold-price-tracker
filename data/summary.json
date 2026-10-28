@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28 16:49:52",
+  "generated_at": "2026-10-28 22:45:18",
   "invest": 10000,
   "metal": "gold",
   "stores": [
@@ -88,14 +88,14 @@
       "key": "chandukaka-alandi",
       "label": "Chandukaka Alandi",
       "note": "Rates are labelled 'applicable for online purchase only'",
-      "rate": 13228.0,
-      "grams_for_10k": 0.756,
+      "rate": 13246.0,
+      "grams_for_10k": 0.7549,
       "as_of": "2026-10-28",
       "stale": false,
       "verdict": "COLLECTING DATA",
       "reasons": [
         "Only 6 day(s) of history so far; need 7 to compare.",
-        "Today: ₹13,228/g -> ₹10,000 buys 0.756 g."
+        "Today: ₹13,246/g -> ₹10,000 buys 0.755 g."
       ],
       "days_of_data": 6,
       "history": [
@@ -121,7 +121,7 @@
         },
         {
           "date": "2026-10-28",
-          "rate": 13228.0
+          "rate": 13246.0
         }
       ]
     }
@@ -134,20 +134,20 @@
   "timing_basis": "Chandukaka Chandannagar's own price history (15 days; only 6 day(s) are shared by all stores so far)",
   "best_store": "chandukaka-alandi",
   "best_label": "Chandukaka Alandi",
-  "rate": 13228.0,
-  "grams_for_10k": 0.756,
+  "rate": 13246.0,
+  "grams_for_10k": 0.7549,
   "reasons": [
-    "Cheapest today: Chandukaka Alandi at ₹13,228/g -> ₹10,000 buys 0.756 g.",
-    "Chandukaka Chandannagar is ₹47/g (0.36%) dearer: the same ₹10,000 of gold costs ₹36 more there (0.0027 g less for the same money).",
+    "Cheapest today: Chandukaka Alandi at ₹13,246/g -> ₹10,000 buys 0.755 g.",
+    "Chandukaka Chandannagar is ₹29/g (0.22%) dearer: the same ₹10,000 of gold costs ₹22 more there (0.0016 g less for the same money).",
     "Timing is judged on Chandukaka Chandannagar's own price history (15 days; only 6 day(s) are shared by all stores so far).",
     "Today is a middle-of-the-road price: not cheap, not expensive.",
     "Today ₹13,275/g -> ₹10,000 buys 0.753 g (30-day average buys 0.749 g, best 0.762 g, worst 0.739 g).",
     "Rate is 0.6% below the 15-day average (₹13,356).",
     "Cheapest-rank: 6 of 15 days (1 = cheapest)."
   ],
-  "rate_22k": 13228.0,
+  "rate_22k": 13246.0,
   "silver": {
-    "generated_at": "2026-10-28 16:49:52",
+    "generated_at": "2026-10-28 22:45:18",
     "invest": 5000,
     "metal": "silver",
     "stores": [
