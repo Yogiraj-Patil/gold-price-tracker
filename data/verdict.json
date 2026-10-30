@@ -1,22 +1,23 @@
 {
-  "as_of": "2026-10-29",
-  "rate_22k": 13197.0,
-  "rate": 13197.0,
-  "grams_for_10k": 0.7577,
-  "days_of_data": 16,
+  "as_of": "2026-10-30",
+  "rate_22k": 13086.0,
+  "rate": 13086.0,
+  "grams_for_10k": 0.7642,
+  "days_of_data": 17,
   "invest": 10000,
   "verdict": "BUY NOW",
   "reasons": [
     "Today is one of the cheaper days of the last month.",
-    "Today ₹13,197/g -> ₹10,000 buys 0.758 g (30-day average buys 0.749 g, best 0.762 g, worst 0.739 g).",
-    "Rate is 1.1% below the 16-day average (₹13,346).",
-    "Cheapest-rank: 6 of 16 days (1 = cheapest).",
-    "Down 0.59% vs previous day (₹13,275)."
+    "Today ₹13,086/g -> ₹10,000 buys 0.764 g (30-day average buys 0.750 g, best 0.764 g, worst 0.739 g).",
+    "Rate is 1.8% below the 17-day average (₹13,331).",
+    "Cheapest-rank: 1 of 17 days (1 = cheapest).",
+    "Down 0.84% vs previous day (₹13,197).",
+    "Rate has fallen 2 days in a row."
   ],
-  "avg_30d": 13345.94,
-  "pct_vs_avg": -1.12,
-  "rank_30d": 6,
-  "window": 16,
+  "avg_30d": 13330.65,
+  "pct_vs_avg": -1.84,
+  "rank_30d": 1,
+  "window": 17,
   "store": "chandukaka-chandannagar",
   "store_label": "Chandukaka Chandannagar",
   "history": [
@@ -83,20 +84,32 @@
     {
       "date": "2026-10-29",
       "rate": 13197.0
+    },
+    {
+      "date": "2026-10-30",
+      "rate": 13086.0
     }
   ],
   "silver": {
-    "as_of": "2026-10-29",
-    "rate_silver": 194.0,
-    "rate": 194.0,
-    "grams_for_10k": 25.7732,
-    "days_of_data": 6,
+    "as_of": "2026-10-30",
+    "rate_silver": 188.0,
+    "rate": 188.0,
+    "grams_for_10k": 26.5957,
+    "days_of_data": 7,
     "invest": 5000,
-    "verdict": "COLLECTING DATA",
+    "verdict": "BUY NOW",
     "reasons": [
-      "Only 6 day(s) of history so far; need 7 to compare.",
-      "Today: ₹194/g -> ₹5,000 buys 25.773 g."
+      "Today is one of the cheaper days of the last month.",
+      "Today ₹188/g -> ₹5,000 buys 26.596 g (30-day average buys 25.547 g, best 26.596 g, worst 25.253 g).",
+      "Rate is 3.9% below the 7-day average (₹196).",
+      "Cheapest-rank: 1 of 7 days (1 = cheapest).",
+      "Down 3.09% vs previous day (₹194).",
+      "Rate has fallen 2 days in a row."
     ],
+    "avg_30d": 195.71,
+    "pct_vs_avg": -3.94,
+    "rank_30d": 1,
+    "window": 7,
     "history": [
       {
         "date": "2026-10-24",
@@ -121,6 +134,10 @@
       {
         "date": "2026-10-29",
         "rate": 194.0
+      },
+      {
+        "date": "2026-10-30",
+        "rate": 188.0
       }
     ]
   }
