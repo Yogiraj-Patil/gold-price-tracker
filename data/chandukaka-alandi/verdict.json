@@ -1,20 +1,20 @@
 {
   "as_of": "2026-11-04",
-  "rate_22k": 12913.0,
-  "rate": 12913.0,
-  "grams_for_10k": 0.7744,
+  "rate_22k": 12857.0,
+  "rate": 12857.0,
+  "grams_for_10k": 0.7778,
   "days_of_data": 13,
   "invest": 10000,
-  "verdict": "OK",
+  "verdict": "BUY NOW",
   "reasons": [
-    "Today is a middle-of-the-road price: not cheap, not expensive.",
-    "Today ₹12,913/g -> ₹10,000 buys 0.774 g (30-day average buys 0.769 g, best 0.783 g, worst 0.755 g).",
-    "Rate is 0.7% below the 13-day average (₹13,007).",
+    "Today is one of the cheaper days of the last month.",
+    "Today ₹12,857/g -> ₹10,000 buys 0.778 g (30-day average buys 0.769 g, best 0.783 g, worst 0.755 g).",
+    "Rate is 1.1% below the 13-day average (₹13,003).",
     "Cheapest-rank: 5 of 13 days (1 = cheapest).",
-    "Up 1.16% vs previous day (₹12,765)."
+    "Up 0.72% vs previous day (₹12,765)."
   ],
-  "avg_30d": 13007.0,
-  "pct_vs_avg": -0.72,
+  "avg_30d": 13002.69,
+  "pct_vs_avg": -1.12,
   "rank_30d": 5,
   "window": 13,
   "store": "chandukaka-alandi",
@@ -70,27 +70,28 @@
     },
     {
       "date": "2026-11-04",
-      "rate": 12913.0
+      "rate": 12857.0
     }
   ],
   "silver": {
     "as_of": "2026-11-04",
-    "rate_silver": 184.0,
-    "rate": 184.0,
-    "grams_for_10k": 27.1739,
+    "rate_silver": 181.0,
+    "rate": 181.0,
+    "grams_for_10k": 27.6243,
     "days_of_data": 13,
     "invest": 5000,
     "verdict": "BUY NOW",
     "reasons": [
       "Today is one of the cheaper days of the last month.",
-      "Today ₹184/g -> ₹5,000 buys 27.174 g (30-day average buys 26.157 g, best 27.473 g, worst 25.000 g).",
-      "Rate is 3.7% below the 13-day average (₹191).",
-      "Cheapest-rank: 4 of 13 days (1 = cheapest).",
-      "Up 1.10% vs previous day (₹182)."
+      "Today ₹181/g -> ₹5,000 buys 27.624 g (30-day average buys 26.189 g, best 27.624 g, worst 25.000 g).",
+      "Rate is 5.2% below the 13-day average (₹191).",
+      "Cheapest-rank: 1 of 13 days (1 = cheapest).",
+      "Down 0.55% vs previous day (₹182).",
+      "Rate has fallen 2 days in a row."
     ],
-    "avg_30d": 191.15,
-    "pct_vs_avg": -3.74,
-    "rank_30d": 4,
+    "avg_30d": 190.92,
+    "pct_vs_avg": -5.2,
+    "rank_30d": 1,
     "window": 13,
     "history": [
       {
@@ -143,7 +144,7 @@
       },
       {
         "date": "2026-11-04",
-        "rate": 184.0
+        "rate": 181.0
       }
     ]
   }
