@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05 18:39:23",
+  "generated_at": "2026-11-06 00:23:48",
   "invest": 10000,
   "metal": "gold",
   "stores": [
@@ -9,18 +9,16 @@
       "note": "",
       "rate": 13401.0,
       "grams_for_10k": 0.7462,
-      "as_of": "2026-11-05",
+      "as_of": "2026-11-06",
       "stale": false,
       "verdict": "WAIT",
       "reasons": [
         "Today is on the expensive side compared with the last month.",
-        "Today ₹13,401/g -> ₹10,000 buys 0.746 g (30-day average buys 0.756 g, best 0.782 g, worst 0.739 g).",
-        "Rate is 1.3% above the 23-day average (₹13,231).",
-        "Cheapest-rank: 15 of 23 days (1 = cheapest).",
-        "Up 1.69% vs previous day (₹13,178).",
-        "Rate has risen 4 days in a row."
+        "Today ₹13,401/g -> ₹10,000 buys 0.746 g (30-day average buys 0.755 g, best 0.782 g, worst 0.739 g).",
+        "Rate is 1.2% above the 24-day average (₹13,238).",
+        "Cheapest-rank: 15 of 24 days (1 = cheapest)."
       ],
-      "days_of_data": 23,
+      "days_of_data": 24,
       "history": [
         {
           "date": "2026-10-14",
@@ -113,6 +111,10 @@
         {
           "date": "2026-11-05",
           "rate": 13401.0
+        },
+        {
+          "date": "2026-11-06",
+          "rate": 13401.0
         }
       ]
     },
@@ -120,20 +122,19 @@
       "key": "chandukaka-alandi",
       "label": "Chandukaka Alandi",
       "note": "Rates are labelled 'applicable for online purchase only'",
-      "rate": 13367.0,
-      "grams_for_10k": 0.7481,
-      "as_of": "2026-11-05",
+      "rate": 13320.0,
+      "grams_for_10k": 0.7508,
+      "as_of": "2026-11-06",
       "stale": false,
       "verdict": "WAIT",
       "reasons": [
         "Today is on the expensive side compared with the last month.",
-        "Today ₹13,367/g -> ₹10,000 buys 0.748 g (30-day average buys 0.766 g, best 0.783 g, worst 0.748 g).",
-        "Rate is 2.4% above the 14-day average (₹13,049).",
-        "Cheapest-rank: 14 of 14 days (1 = cheapest).",
-        "Up 1.77% vs previous day (₹13,135).",
-        "Rate has risen 2 days in a row."
+        "Today ₹13,320/g -> ₹10,000 buys 0.751 g (30-day average buys 0.765 g, best 0.783 g, worst 0.748 g).",
+        "Rate is 1.9% above the 15-day average (₹13,067).",
+        "Cheapest-rank: 14 of 15 days (1 = cheapest).",
+        "Down 0.35% vs previous day (₹13,367)."
       ],
-      "days_of_data": 14,
+      "days_of_data": 15,
       "history": [
         {
           "date": "2026-10-23",
@@ -190,6 +191,10 @@
         {
           "date": "2026-11-05",
           "rate": 13367.0
+        },
+        {
+          "date": "2026-11-06",
+          "rate": 13320.0
         }
       ]
     }
@@ -199,23 +204,23 @@
     "chandukaka-chandannagar"
   ],
   "verdict": "WAIT",
-  "timing_basis": "best price across 2 store(s), 14 days of common history",
+  "timing_basis": "best price across 2 store(s), 15 days of common history",
   "best_store": "chandukaka-alandi",
   "best_label": "Chandukaka Alandi",
-  "rate": 13367.0,
-  "grams_for_10k": 0.7481,
+  "rate": 13320.0,
+  "grams_for_10k": 0.7508,
   "reasons": [
-    "Cheapest today: Chandukaka Alandi at ₹13,367/g -> ₹10,000 buys 0.748 g.",
-    "Chandukaka Chandannagar is ₹34/g (0.25%) dearer: the same ₹10,000 of gold costs ₹25 more there (0.0019 g less for the same money).",
-    "Timing is judged on the best price across 2 store(s), 14 days of common history:",
+    "Cheapest today: Chandukaka Alandi at ₹13,320/g -> ₹10,000 buys 0.751 g.",
+    "Chandukaka Chandannagar is ₹81/g (0.61%) dearer: the same ₹10,000 of gold costs ₹61 more there (0.0046 g less for the same money).",
+    "Timing is judged on the best price across 2 store(s), 15 days of common history:",
     "Today is on the expensive side compared with the last month.",
-    "Today ₹13,367/g -> ₹10,000 buys 0.748 g (30-day average buys 0.766 g, best 0.783 g, worst 0.748 g).",
-    "Rate is 2.4% above the 14-day average (₹13,048).",
-    "Cheapest-rank: 14 of 14 days (1 = cheapest)."
+    "Today ₹13,320/g -> ₹10,000 buys 0.751 g (30-day average buys 0.765 g, best 0.783 g, worst 0.748 g).",
+    "Rate is 1.9% above the 15-day average (₹13,066).",
+    "Cheapest-rank: 14 of 15 days (1 = cheapest)."
   ],
-  "rate_22k": 13367.0,
+  "rate_22k": 13320.0,
   "silver": {
-    "generated_at": "2026-11-05 18:39:23",
+    "generated_at": "2026-11-06 00:23:48",
     "invest": 5000,
     "metal": "silver",
     "stores": [
@@ -225,18 +230,16 @@
         "note": "",
         "rate": 191.0,
         "grams_for_10k": 26.178,
-        "as_of": "2026-11-05",
+        "as_of": "2026-11-06",
         "stale": false,
         "verdict": "OK",
         "reasons": [
           "Today is a middle-of-the-road price: not cheap, not expensive.",
-          "Today ₹191/g -> ₹5,000 buys 26.178 g (30-day average buys 26.263 g, best 27.473 g, worst 25.253 g).",
-          "Rate is 0.3% above the 13-day average (₹190).",
-          "Cheapest-rank: 7 of 13 days (1 = cheapest).",
-          "Up 1.06% vs previous day (₹189).",
-          "Rate has risen 2 days in a row."
+          "Today ₹191/g -> ₹5,000 buys 26.178 g (30-day average buys 26.257 g, best 27.473 g, worst 25.253 g).",
+          "Rate is 0.3% above the 14-day average (₹190).",
+          "Cheapest-rank: 7 of 14 days (1 = cheapest)."
         ],
-        "days_of_data": 13,
+        "days_of_data": 14,
         "history": [
           {
             "date": "2026-10-24",
@@ -289,6 +292,10 @@
           {
             "date": "2026-11-05",
             "rate": 191.0
+          },
+          {
+            "date": "2026-11-06",
+            "rate": 191.0
           }
         ]
       },
@@ -298,18 +305,16 @@
         "note": "Rates are labelled 'applicable for online purchase only'",
         "rate": 192.0,
         "grams_for_10k": 26.0417,
-        "as_of": "2026-11-05",
+        "as_of": "2026-11-06",
         "stale": false,
         "verdict": "OK",
         "reasons": [
           "Today is a middle-of-the-road price: not cheap, not expensive.",
-          "Today ₹192/g -> ₹5,000 buys 26.042 g (30-day average buys 26.090 g, best 27.473 g, worst 25.000 g).",
-          "Rate is 0.2% above the 14-day average (₹192).",
-          "Cheapest-rank: 7 of 14 days (1 = cheapest).",
-          "Up 1.05% vs previous day (₹190).",
-          "Rate has risen 2 days in a row."
+          "Today ₹192/g -> ₹5,000 buys 26.042 g (30-day average buys 26.087 g, best 27.473 g, worst 25.000 g).",
+          "Rate is 0.2% above the 15-day average (₹192).",
+          "Cheapest-rank: 7 of 15 days (1 = cheapest)."
         ],
-        "days_of_data": 14,
+        "days_of_data": 15,
         "history": [
           {
             "date": "2026-10-23",
@@ -366,6 +371,10 @@
           {
             "date": "2026-11-05",
             "rate": 192.0
+          },
+          {
+            "date": "2026-11-06",
+            "rate": 192.0
           }
         ]
       }
@@ -375,7 +384,7 @@
       "chandukaka-alandi"
     ],
     "verdict": "OK",
-    "timing_basis": "best price across 2 store(s), 13 days of common history",
+    "timing_basis": "best price across 2 store(s), 14 days of common history",
     "best_store": "chandukaka-chandannagar",
     "best_label": "Chandukaka Chandannagar",
     "rate": 191.0,
@@ -383,11 +392,11 @@
     "reasons": [
       "Cheapest today: Chandukaka Chandannagar at ₹191.00/g -> ₹5,000 buys 26.178 g.",
       "Chandukaka Alandi is ₹1.00/g (0.52%) dearer: the same ₹5,000 of silver costs ₹26 more there (0.1363 g less for the same money).",
-      "Timing is judged on the best price across 2 store(s), 13 days of common history:",
+      "Timing is judged on the best price across 2 store(s), 14 days of common history:",
       "Today is a middle-of-the-road price: not cheap, not expensive.",
-      "Today ₹191/g -> ₹5,000 buys 26.178 g (30-day average buys 26.263 g, best 27.473 g, worst 25.253 g).",
-      "Rate is 0.3% above the 13-day average (₹190).",
-      "Cheapest-rank: 7 of 13 days (1 = cheapest)."
+      "Today ₹191/g -> ₹5,000 buys 26.178 g (30-day average buys 26.257 g, best 27.473 g, worst 25.253 g).",
+      "Rate is 0.3% above the 14-day average (₹190).",
+      "Cheapest-rank: 7 of 14 days (1 = cheapest)."
     ]
   }
 }
