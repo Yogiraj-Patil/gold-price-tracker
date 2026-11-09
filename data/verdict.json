@@ -1,21 +1,22 @@
 {
-  "as_of": "2026-11-08",
-  "rate_22k": 13188.0,
-  "rate": 13188.0,
-  "grams_for_10k": 0.7583,
-  "days_of_data": 26,
+  "as_of": "2026-11-09",
+  "rate_22k": 13271.0,
+  "rate": 13271.0,
+  "grams_for_10k": 0.7535,
+  "days_of_data": 27,
   "invest": 10000,
   "verdict": "OK",
   "reasons": [
     "Today is a middle-of-the-road price: not cheap, not expensive.",
-    "Today ₹13,188/g -> ₹10,000 buys 0.758 g (30-day average buys 0.756 g, best 0.782 g, worst 0.739 g).",
-    "Rate is 0.3% below the 26-day average (₹13,226).",
-    "Cheapest-rank: 12 of 26 days (1 = cheapest)."
+    "Today ₹13,271/g -> ₹10,000 buys 0.754 g (30-day average buys 0.756 g, best 0.782 g, worst 0.739 g).",
+    "Rate is 0.3% above the 27-day average (₹13,228).",
+    "Cheapest-rank: 16 of 27 days (1 = cheapest).",
+    "Up 0.63% vs previous day (₹13,188)."
   ],
-  "avg_30d": 13225.96,
-  "pct_vs_avg": -0.29,
-  "rank_30d": 12,
-  "window": 26,
+  "avg_30d": 13227.63,
+  "pct_vs_avg": 0.33,
+  "rank_30d": 16,
+  "window": 27,
   "store": "chandukaka-chandannagar",
   "store_label": "Chandukaka Chandannagar",
   "history": [
@@ -122,26 +123,31 @@
     {
       "date": "2026-11-08",
       "rate": 13188.0
+    },
+    {
+      "date": "2026-11-09",
+      "rate": 13271.0
     }
   ],
   "silver": {
-    "as_of": "2026-11-08",
-    "rate_silver": 189.0,
-    "rate": 189.0,
-    "grams_for_10k": 26.455,
-    "days_of_data": 16,
+    "as_of": "2026-11-09",
+    "rate_silver": 191.0,
+    "rate": 191.0,
+    "grams_for_10k": 26.178,
+    "days_of_data": 17,
     "invest": 5000,
     "verdict": "OK",
     "reasons": [
       "Today is a middle-of-the-road price: not cheap, not expensive.",
-      "Today ₹189/g -> ₹5,000 buys 26.455 g (30-day average buys 26.307 g, best 27.473 g, worst 25.253 g).",
-      "Rate is 0.6% below the 16-day average (₹190).",
-      "Cheapest-rank: 7 of 16 days (1 = cheapest)."
+      "Today ₹191/g -> ₹5,000 buys 26.178 g (30-day average buys 26.300 g, best 27.473 g, worst 25.253 g).",
+      "Rate is 0.5% above the 17-day average (₹190).",
+      "Cheapest-rank: 10 of 17 days (1 = cheapest).",
+      "Up 1.06% vs previous day (₹189)."
     ],
-    "avg_30d": 190.06,
-    "pct_vs_avg": -0.56,
-    "rank_30d": 7,
-    "window": 16,
+    "avg_30d": 190.12,
+    "pct_vs_avg": 0.46,
+    "rank_30d": 10,
+    "window": 17,
     "history": [
       {
         "date": "2026-10-24",
@@ -206,6 +212,10 @@
       {
         "date": "2026-11-08",
         "rate": 189.0
+      },
+      {
+        "date": "2026-11-09",
+        "rate": 191.0
       }
     ]
   }
