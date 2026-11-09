@@ -1,20 +1,20 @@
 {
   "as_of": "2026-11-09",
-  "rate_22k": 13271.0,
-  "rate": 13271.0,
-  "grams_for_10k": 0.7535,
+  "rate_22k": 13225.0,
+  "rate": 13225.0,
+  "grams_for_10k": 0.7561,
   "days_of_data": 27,
   "invest": 10000,
   "verdict": "OK",
   "reasons": [
     "Today is a middle-of-the-road price: not cheap, not expensive.",
-    "Today ₹13,271/g -> ₹10,000 buys 0.754 g (30-day average buys 0.756 g, best 0.782 g, worst 0.739 g).",
-    "Rate is 0.3% above the 27-day average (₹13,228).",
+    "Today ₹13,225/g -> ₹10,000 buys 0.756 g (30-day average buys 0.756 g, best 0.782 g, worst 0.739 g).",
+    "Rate is 0.0% below the 27-day average (₹13,226).",
     "Cheapest-rank: 16 of 27 days (1 = cheapest).",
-    "Up 0.63% vs previous day (₹13,188)."
+    "Up 0.28% vs previous day (₹13,188)."
   ],
-  "avg_30d": 13227.63,
-  "pct_vs_avg": 0.33,
+  "avg_30d": 13225.93,
+  "pct_vs_avg": -0.01,
   "rank_30d": 16,
   "window": 27,
   "store": "chandukaka-chandannagar",
@@ -126,7 +126,7 @@
     },
     {
       "date": "2026-11-09",
-      "rate": 13271.0
+      "rate": 13225.0
     }
   ],
   "silver": {
