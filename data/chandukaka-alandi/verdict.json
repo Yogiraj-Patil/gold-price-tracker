@@ -1,20 +1,22 @@
 {
   "as_of": "2026-11-11",
-  "rate_22k": 13200.0,
-  "rate": 13200.0,
-  "grams_for_10k": 0.7576,
+  "rate_22k": 13042.0,
+  "rate": 13042.0,
+  "grams_for_10k": 0.7668,
   "days_of_data": 20,
   "invest": 10000,
-  "verdict": "WAIT",
+  "verdict": "BUY NOW",
   "reasons": [
-    "Today is on the expensive side compared with the last month.",
-    "Today ₹13,200/g -> ₹10,000 buys 0.758 g (30-day average buys 0.764 g, best 0.783 g, worst 0.748 g).",
-    "Rate is 0.9% above the 20-day average (₹13,085).",
-    "Cheapest-rank: 16 of 20 days (1 = cheapest)."
+    "Today is one of the cheaper days of the last month.",
+    "Today ₹13,042/g -> ₹10,000 buys 0.767 g (30-day average buys 0.765 g, best 0.783 g, worst 0.748 g).",
+    "Rate is 0.3% below the 20-day average (₹13,077).",
+    "Cheapest-rank: 6 of 20 days (1 = cheapest).",
+    "Down 1.20% vs previous day (₹13,200).",
+    "Rate has fallen 2 days in a row."
   ],
-  "avg_30d": 13085.2,
-  "pct_vs_avg": 0.88,
-  "rank_30d": 16,
+  "avg_30d": 13077.3,
+  "pct_vs_avg": -0.27,
+  "rank_30d": 6,
   "window": 20,
   "store": "chandukaka-alandi",
   "store_label": "Chandukaka Alandi",
@@ -97,26 +99,27 @@
     },
     {
       "date": "2026-11-11",
-      "rate": 13200.0
+      "rate": 13042.0
     }
   ],
   "silver": {
     "as_of": "2026-11-11",
-    "rate_silver": 191.0,
-    "rate": 191.0,
-    "grams_for_10k": 26.178,
+    "rate_silver": 189.0,
+    "rate": 189.0,
+    "grams_for_10k": 26.455,
     "days_of_data": 20,
     "invest": 5000,
-    "verdict": "OK",
+    "verdict": "BUY NOW",
     "reasons": [
-      "Today is a middle-of-the-road price: not cheap, not expensive.",
-      "Today ₹191/g -> ₹5,000 buys 26.178 g (30-day average buys 26.157 g, best 27.473 g, worst 25.000 g).",
-      "Rate is 0.1% below the 20-day average (₹191).",
-      "Cheapest-rank: 10 of 20 days (1 = cheapest)."
+      "Today is one of the cheaper days of the last month.",
+      "Today ₹189/g -> ₹5,000 buys 26.455 g (30-day average buys 26.171 g, best 27.473 g, worst 25.000 g).",
+      "Rate is 1.1% below the 20-day average (₹191).",
+      "Cheapest-rank: 6 of 20 days (1 = cheapest).",
+      "Down 1.05% vs previous day (₹191)."
     ],
-    "avg_30d": 191.15,
-    "pct_vs_avg": -0.08,
-    "rank_30d": 10,
+    "avg_30d": 191.05,
+    "pct_vs_avg": -1.07,
+    "rank_30d": 6,
     "window": 20,
     "history": [
       {
@@ -197,7 +200,7 @@
       },
       {
         "date": "2026-11-11",
-        "rate": 191.0
+        "rate": 189.0
       }
     ]
   }
