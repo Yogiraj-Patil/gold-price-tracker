@@ -1,22 +1,22 @@
 {
   "as_of": "2026-11-12",
-  "rate_22k": 12901.0,
-  "rate": 12901.0,
-  "grams_for_10k": 0.7751,
+  "rate_22k": 12836.0,
+  "rate": 12836.0,
+  "grams_for_10k": 0.7791,
   "days_of_data": 30,
   "invest": 10000,
   "verdict": "BUY NOW",
   "reasons": [
     "Today is one of the cheaper days of the last month.",
-    "Today ₹12,901/g -> ₹10,000 buys 0.775 g (30-day average buys 0.757 g, best 0.782 g, worst 0.739 g).",
-    "Rate is 2.3% below the 30-day average (₹13,209).",
-    "Cheapest-rank: 5 of 30 days (1 = cheapest).",
-    "Down 1.27% vs previous day (₹13,067).",
+    "Today ₹12,836/g -> ₹10,000 buys 0.779 g (30-day average buys 0.757 g, best 0.782 g, worst 0.739 g).",
+    "Rate is 2.8% below the 30-day average (₹13,207).",
+    "Cheapest-rank: 4 of 30 days (1 = cheapest).",
+    "Down 1.77% vs previous day (₹13,067).",
     "Rate has fallen 3 days in a row."
   ],
-  "avg_30d": 13209.13,
-  "pct_vs_avg": -2.33,
-  "rank_30d": 5,
+  "avg_30d": 13206.97,
+  "pct_vs_avg": -2.81,
+  "rank_30d": 4,
   "window": 30,
   "store": "chandukaka-chandannagar",
   "store_label": "Chandukaka Chandannagar",
@@ -139,27 +139,27 @@
     },
     {
       "date": "2026-11-12",
-      "rate": 12901.0
+      "rate": 12836.0
     }
   ],
   "silver": {
     "as_of": "2026-11-12",
-    "rate_silver": 186.0,
-    "rate": 186.0,
-    "grams_for_10k": 26.8817,
+    "rate_silver": 185.0,
+    "rate": 185.0,
+    "grams_for_10k": 27.027,
     "days_of_data": 20,
     "invest": 5000,
     "verdict": "BUY NOW",
     "reasons": [
       "Today is one of the cheaper days of the last month.",
-      "Today ₹186/g -> ₹5,000 buys 26.882 g (30-day average buys 26.323 g, best 27.473 g, worst 25.253 g).",
-      "Rate is 2.1% below the 20-day average (₹190).",
+      "Today ₹185/g -> ₹5,000 buys 27.027 g (30-day average buys 26.330 g, best 27.473 g, worst 25.253 g).",
+      "Rate is 2.6% below the 20-day average (₹190).",
       "Cheapest-rank: 6 of 20 days (1 = cheapest).",
-      "Down 2.11% vs previous day (₹190).",
+      "Down 2.63% vs previous day (₹190).",
       "Rate has fallen 2 days in a row."
     ],
-    "avg_30d": 189.95,
-    "pct_vs_avg": -2.08,
+    "avg_30d": 189.9,
+    "pct_vs_avg": -2.58,
     "rank_30d": 6,
     "window": 20,
     "history": [
@@ -241,7 +241,7 @@
       },
       {
         "date": "2026-11-12",
-        "rate": 186.0
+        "rate": 185.0
       }
     ]
   }
