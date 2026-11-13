@@ -1,21 +1,21 @@
 {
   "as_of": "2026-11-13",
-  "rate_22k": 12753.0,
-  "rate": 12753.0,
-  "grams_for_10k": 0.7841,
+  "rate_22k": 12660.0,
+  "rate": 12660.0,
+  "grams_for_10k": 0.7899,
   "days_of_data": 31,
   "invest": 10000,
   "verdict": "BUY NOW",
   "reasons": [
     "Today is one of the cheaper days of the last month.",
-    "Today ₹12,753/g -> ₹10,000 buys 0.784 g (30-day average buys 0.759 g, best 0.784 g, worst 0.739 g).",
-    "Rate is 3.2% below the 30-day average (₹13,181).",
+    "Today ₹12,660/g -> ₹10,000 buys 0.790 g (30-day average buys 0.759 g, best 0.790 g, worst 0.739 g).",
+    "Rate is 3.9% below the 30-day average (₹13,178).",
     "Cheapest-rank: 1 of 30 days (1 = cheapest).",
-    "Down 0.65% vs previous day (₹12,836).",
+    "Down 1.37% vs previous day (₹12,836).",
     "Rate has fallen 4 days in a row."
   ],
-  "avg_30d": 13180.73,
-  "pct_vs_avg": -3.25,
+  "avg_30d": 13177.63,
+  "pct_vs_avg": -3.93,
   "rank_30d": 1,
   "window": 30,
   "store": "chandukaka-chandannagar",
@@ -143,28 +143,28 @@
     },
     {
       "date": "2026-11-13",
-      "rate": 12753.0
+      "rate": 12660.0
     }
   ],
   "silver": {
     "as_of": "2026-11-13",
-    "rate_silver": 183.0,
-    "rate": 183.0,
-    "grams_for_10k": 27.3224,
+    "rate_silver": 181.0,
+    "rate": 181.0,
+    "grams_for_10k": 27.6243,
     "days_of_data": 21,
     "invest": 5000,
     "verdict": "BUY NOW",
     "reasons": [
       "Today is one of the cheaper days of the last month.",
-      "Today ₹183/g -> ₹5,000 buys 27.322 g (30-day average buys 26.375 g, best 27.473 g, worst 25.253 g).",
-      "Rate is 3.5% below the 21-day average (₹190).",
-      "Cheapest-rank: 4 of 21 days (1 = cheapest).",
-      "Down 1.08% vs previous day (₹185).",
+      "Today ₹181/g -> ₹5,000 buys 27.624 g (30-day average buys 26.389 g, best 27.624 g, worst 25.253 g).",
+      "Rate is 4.5% below the 21-day average (₹189).",
+      "Cheapest-rank: 1 of 21 days (1 = cheapest).",
+      "Down 2.16% vs previous day (₹185).",
       "Rate has fallen 3 days in a row."
     ],
-    "avg_30d": 189.57,
-    "pct_vs_avg": -3.47,
-    "rank_30d": 4,
+    "avg_30d": 189.48,
+    "pct_vs_avg": -4.47,
+    "rank_30d": 1,
     "window": 21,
     "history": [
       {
@@ -249,7 +249,7 @@
       },
       {
         "date": "2026-11-13",
-        "rate": 183.0
+        "rate": 181.0
       }
     ]
   }
