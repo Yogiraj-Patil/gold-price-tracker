@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14 17:38:33",
+  "generated_at": "2026-11-14 22:45:35",
   "invest": 10000,
   "metal": "gold",
   "stores": [
@@ -286,7 +286,7 @@
   ],
   "rate_22k": 12644.0,
   "silver": {
-    "generated_at": "2026-11-14 17:38:33",
+    "generated_at": "2026-11-14 22:45:35",
     "invest": 5000,
     "metal": "silver",
     "stores": [
