@@ -7,6 +7,7 @@ Fields per store:
   data_dir    folder (relative to the repo root) for this store's history.csv and verdict.json
   render      "http"    = plain request first, headless browser as fallback (server-rendered pages)
               "browser" = headless browser only (rates are filled in by JavaScript)
+  click_text  (browser) optional accessible button name to click before reading rates
   wait_text   (browser) text that appears on the page once the rates have loaded
   anchor      (optional) text to start reading from, to avoid matching something earlier on the page
   rate_22k_re, rate_24k_re, updated_re   regexes; group 1 captures the number / timestamp

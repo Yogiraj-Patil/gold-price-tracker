@@ -67,7 +67,7 @@ jobs:
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
       - name: Notify (only when triggered by workflow_dispatch / cron-job.org)
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.notify }}
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.notify && steps.fetch.outcome == 'success' }}
         env:
           NOTIFY_CHANNELS: ${{ inputs.channels }}
           SMTP_USER: ${{ secrets.SMTP_USER }}

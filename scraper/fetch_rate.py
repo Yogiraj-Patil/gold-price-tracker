@@ -103,16 +103,27 @@ def via_playwright(store):
         # PLAYWRIGHT_CHANNEL=msedge (or chrome) uses the browser already installed on this PC,
         # handy for running locally without 'playwright install'. GitHub uses its own Chromium.
         b = p.chromium.launch(channel=os.environ.get("PLAYWRIGHT_CHANNEL") or None)
-        pg = b.new_page(user_agent=HEADERS["User-Agent"], locale="en-IN")
-        pg.goto(store["url"], wait_until="domcontentloaded", timeout=60000)
-        if store.get("wait_text"):
-            # JavaScript fills in the rates after load; wait for the marker text to appear.
-            pg.wait_for_function("t => document.body.textContent.includes(t)", arg=store["wait_text"], timeout=45000)
-        else:
-            pg.wait_for_timeout(5000)
-        text = pg.evaluate(SPACED_TEXT_JS)
-        b.close()
-    return parse(store, text)
+        try:
+            pg = b.new_page(user_agent=HEADERS["User-Agent"], locale="en-IN")
+            pg.goto(store["url"], wait_until="domcontentloaded", timeout=60000)
+            if store.get("click_text"):
+                pg.get_by_role("button", name=store["click_text"]).click(timeout=15000)
+            if store.get("wait_text"):
+                # JavaScript fills in the rates after load or after opening a rates panel.
+                pg.wait_for_function("t => document.body.textContent.includes(t)", arg=store["wait_text"], timeout=45000)
+            else:
+                pg.wait_for_timeout(5000)
+            text = pg.evaluate(SPACED_TEXT_JS)
+            title = pg.title()
+        finally:
+            b.close()
+    data = parse(store, text)
+    if data is None:
+        # Make a silent parse failure explain itself in the Actions log.
+        i = text.find(store["anchor"]) if store.get("anchor") else 0
+        raise RuntimeError(f"page loaded (title {title!r}) but no 22K rate matched; "
+                           f"text near the rates: {text[max(i, 0):max(i, 0) + 300]!r}")
+    return data
 
 
 def via_manual(store):
