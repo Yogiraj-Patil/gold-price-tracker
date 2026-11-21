@@ -1,21 +1,21 @@
 {
-  "as_of": "2026-11-19",
-  "rate_22k": 12049.0,
-  "rate": 12049.0,
-  "grams_for_10k": 0.8299,
-  "days_of_data": 37,
+  "as_of": "2026-11-21",
+  "rate_22k": 11466.0,
+  "rate": 11466.0,
+  "grams_for_10k": 0.8721,
+  "days_of_data": 38,
   "invest": 10000,
   "verdict": "BUY NOW",
   "reasons": [
     "Today is one of the cheaper days of the last month.",
-    "Today ₹12,049/g -> ₹10,000 buys 0.830 g (30-day average buys 0.771 g, best 0.830 g, worst 0.746 g).",
-    "Rate is 7.1% below the 30-day average (₹12,965).",
+    "Today ₹11,466/g -> ₹10,000 buys 0.872 g (30-day average buys 0.775 g, best 0.872 g, worst 0.746 g).",
+    "Rate is 11.1% below the 30-day average (₹12,900).",
     "Cheapest-rank: 1 of 30 days (1 = cheapest).",
-    "Down 1.89% vs previous day (₹12,281).",
-    "Rate has fallen 4 days in a row."
+    "Down 4.84% vs previous day (₹12,049).",
+    "Rate has fallen 5 days in a row."
   ],
-  "avg_30d": 12965.0,
-  "pct_vs_avg": -7.07,
+  "avg_30d": 12900.23,
+  "pct_vs_avg": -11.12,
   "rank_30d": 1,
   "window": 30,
   "store": "chandukaka-chandannagar",
@@ -168,28 +168,32 @@
     {
       "date": "2026-11-19",
       "rate": 12049.0
+    },
+    {
+      "date": "2026-11-21",
+      "rate": 11466.0
     }
   ],
   "silver": {
-    "as_of": "2026-11-19",
-    "rate_silver": 164.0,
-    "rate": 164.0,
-    "grams_for_10k": 30.4878,
-    "days_of_data": 27,
+    "as_of": "2026-11-21",
+    "rate_silver": 154.0,
+    "rate": 154.0,
+    "grams_for_10k": 32.4675,
+    "days_of_data": 28,
     "invest": 5000,
     "verdict": "BUY NOW",
     "reasons": [
       "Today is one of the cheaper days of the last month.",
-      "Today ₹164/g -> ₹5,000 buys 30.488 g (30-day average buys 26.898 g, best 30.488 g, worst 25.253 g).",
-      "Rate is 11.8% below the 27-day average (₹186).",
-      "Cheapest-rank: 1 of 27 days (1 = cheapest).",
-      "Down 3.53% vs previous day (₹170).",
-      "Rate has fallen 2 days in a row."
+      "Today ₹154/g -> ₹5,000 buys 32.468 g (30-day average buys 27.064 g, best 32.468 g, worst 25.253 g).",
+      "Rate is 16.6% below the 28-day average (₹185).",
+      "Cheapest-rank: 1 of 28 days (1 = cheapest).",
+      "Down 6.10% vs previous day (₹164).",
+      "Rate has fallen 3 days in a row."
     ],
-    "avg_30d": 185.89,
-    "pct_vs_avg": -11.78,
+    "avg_30d": 184.75,
+    "pct_vs_avg": -16.64,
     "rank_30d": 1,
-    "window": 27,
+    "window": 28,
     "history": [
       {
         "date": "2026-10-24",
@@ -298,6 +302,10 @@
       {
         "date": "2026-11-19",
         "rate": 164.0
+      },
+      {
+        "date": "2026-11-21",
+        "rate": 154.0
       }
     ]
   }
