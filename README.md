@@ -19,14 +19,14 @@ Stores are listed in `scraper/stores.json`. Naming convention: `<brand>-<area>`,
 
 | Store | Source | Data files |
 |---|---|---|
-| Chandukaka Chandannagar | https://chandukakasaraf.in/todays-gold-rate/ | `data/history.csv`, `data/verdict.json` |
+| Chandukaka Chandannagar | https://chandukakasaraf.in/ (open "Today's Metal Rates"; read with a headless browser) | `data/history.csv`, `data/verdict.json` |
 | Chandukaka Alandi | https://csjewels.com/ ("Metal Rates" menu; loaded by script, so read with a headless browser) | `data/chandukaka-alandi/history.csv`, `data/chandukaka-alandi/verdict.json` |
 
 **How it fits together**
 1. `fetch_rate.py` reads every store in `stores.json` and appends one row per day to that store's `history.csv`. One store failing never blocks the others.
 2. `analyze.py` gives each store its own timing verdict, then writes `data/summary.json`: today's price at every store, the cheapest store, and **one common verdict**.
 3. The common verdict = *which store to buy from* (lowest 22K ₹/g among stores with a rate from the last 2 days) + *whether it is a good time* (judged on the best available price across stores, using only days where all stores have data; until 7 such days exist it uses the store with the longest history).
-4. `notify.py` sends ONE message (email / ntfy / WhatsApp) with the common verdict, every store's latest rate and the reasons.
+4. `notify.py` sends ONE message (email / ntfy / WhatsApp) with the common verdict, every store's latest rate and the reasons, but only when every store fetch succeeds.
 5. `index.html` shows the common verdict, a table of the latest price at each store, and one chart with every store's history.
 
 **Changing the header / menu text**: edit `site.js` only (app title, subtitle, page titles and menu). Both pages build their header from it, and `site.css` holds its styling. A new page = one more entry in `SITE.pages` plus `<header id="site-header"></header>` and `SiteHeader.render('<id>')` in that page.
@@ -39,6 +39,7 @@ Stores are listed in `scraper/stores.json`. Naming convention: `<brand>-<area>`,
   "url": "https://example.com/gold-rate",
   "data_dir": "data/png-kharadi",
   "render": "http",                       // "http" = plain request (browser as fallback); "browser" = JavaScript-filled page
+  "click_text": "Today's Metal Rates",    // optional browser-only button to click before reading rates
   "wait_text": "Updated On",              // browser only: text that appears once rates have loaded
   "anchor": "Metal Rate",                 // optional: start reading the page from this text
   "rate_22k_re": "22K\\s+(\\d[\\d,]*)",   // regex, group 1 = the number
