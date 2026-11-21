@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21 16:30:51",
+  "generated_at": "2026-11-21 11:31:10",
   "invest": 10000,
   "metal": "gold",
   "stores": [
@@ -7,20 +7,20 @@
       "key": "chandukaka-chandannagar",
       "label": "Chandukaka Chandannagar",
       "note": "",
-      "rate": 11466.0,
-      "grams_for_10k": 0.8721,
-      "as_of": "2026-11-21",
+      "rate": 12049.0,
+      "grams_for_10k": 0.8299,
+      "as_of": "2026-11-19",
       "stale": false,
       "verdict": "BUY NOW",
       "reasons": [
         "Today is one of the cheaper days of the last month.",
-        "Today ₹11,466/g -> ₹10,000 buys 0.872 g (30-day average buys 0.754 g, best 0.872 g, worst 0.739 g).",
-        "Rate is 13.5% below the 12-day average (₹13,255).",
-        "Cheapest-rank: 1 of 12 days (1 = cheapest).",
-        "Down 12.63% vs previous day (₹13,123).",
-        "Rate has fallen 5 days in a row."
+        "Today ₹12,049/g -> ₹10,000 buys 0.830 g (30-day average buys 0.771 g, best 0.830 g, worst 0.746 g).",
+        "Rate is 7.1% below the 30-day average (₹12,965).",
+        "Cheapest-rank: 1 of 30 days (1 = cheapest).",
+        "Down 1.89% vs previous day (₹12,281).",
+        "Rate has fallen 4 days in a row."
       ],
-      "days_of_data": 12,
+      "days_of_data": 37,
       "history": [
         {
           "date": "2026-10-14",
@@ -67,8 +67,108 @@
           "rate": 13123.0
         },
         {
-          "date": "2026-11-21",
-          "rate": 11466.0
+          "date": "2026-10-25",
+          "rate": 13123.0
+        },
+        {
+          "date": "2026-10-26",
+          "rate": 13178.0
+        },
+        {
+          "date": "2026-10-27",
+          "rate": 13169.0
+        },
+        {
+          "date": "2026-10-28",
+          "rate": 13275.0
+        },
+        {
+          "date": "2026-10-29",
+          "rate": 13197.0
+        },
+        {
+          "date": "2026-10-30",
+          "rate": 12993.0
+        },
+        {
+          "date": "2026-10-31",
+          "rate": 12780.0
+        },
+        {
+          "date": "2026-11-01",
+          "rate": 12780.0
+        },
+        {
+          "date": "2026-11-02",
+          "rate": 12799.0
+        },
+        {
+          "date": "2026-11-03",
+          "rate": 12836.0
+        },
+        {
+          "date": "2026-11-04",
+          "rate": 13178.0
+        },
+        {
+          "date": "2026-11-05",
+          "rate": 13401.0
+        },
+        {
+          "date": "2026-11-06",
+          "rate": 13197.0
+        },
+        {
+          "date": "2026-11-07",
+          "rate": 13188.0
+        },
+        {
+          "date": "2026-11-08",
+          "rate": 13188.0
+        },
+        {
+          "date": "2026-11-09",
+          "rate": 13225.0
+        },
+        {
+          "date": "2026-11-10",
+          "rate": 13206.0
+        },
+        {
+          "date": "2026-11-11",
+          "rate": 13067.0
+        },
+        {
+          "date": "2026-11-12",
+          "rate": 12836.0
+        },
+        {
+          "date": "2026-11-13",
+          "rate": 12660.0
+        },
+        {
+          "date": "2026-11-14",
+          "rate": 12651.0
+        },
+        {
+          "date": "2026-11-15",
+          "rate": 12651.0
+        },
+        {
+          "date": "2026-11-16",
+          "rate": 12558.0
+        },
+        {
+          "date": "2026-11-17",
+          "rate": 12494.0
+        },
+        {
+          "date": "2026-11-18",
+          "rate": 12281.0
+        },
+        {
+          "date": "2026-11-19",
+          "rate": 12049.0
         }
       ]
     },
@@ -76,24 +176,140 @@
       "key": "chandukaka-alandi",
       "label": "Chandukaka Alandi",
       "note": "Rates are labelled 'applicable for online purchase only'",
-      "rate": 11441.0,
-      "grams_for_10k": 0.874,
+      "rate": 11496.0,
+      "grams_for_10k": 0.8699,
       "as_of": "2026-11-21",
       "stale": false,
-      "verdict": "COLLECTING DATA",
+      "verdict": "BUY NOW",
       "reasons": [
-        "Only 2 day(s) of history so far; need 7 to compare.",
-        "Today: ₹11,441/g -> ₹10,000 buys 0.874 g."
+        "Today is one of the cheaper days of the last month.",
+        "Today ₹11,496/g -> ₹10,000 buys 0.870 g (30-day average buys 0.780 g, best 0.870 g, worst 0.748 g).",
+        "Rate is 10.3% below the 30-day average (₹12,817).",
+        "Cheapest-rank: 1 of 30 days (1 = cheapest).",
+        "Down 0.24% vs previous day (₹11,524).",
+        "Rate has fallen 6 days in a row."
       ],
-      "days_of_data": 2,
+      "days_of_data": 30,
       "history": [
         {
           "date": "2026-10-23",
           "rate": 13117.0
         },
         {
+          "date": "2026-10-24",
+          "rate": 13117.0
+        },
+        {
+          "date": "2026-10-25",
+          "rate": 13117.0
+        },
+        {
+          "date": "2026-10-26",
+          "rate": 13181.0
+        },
+        {
+          "date": "2026-10-27",
+          "rate": 13181.0
+        },
+        {
+          "date": "2026-10-28",
+          "rate": 13246.0
+        },
+        {
+          "date": "2026-10-29",
+          "rate": 13191.0
+        },
+        {
+          "date": "2026-10-30",
+          "rate": 12941.0
+        },
+        {
+          "date": "2026-10-31",
+          "rate": 12774.0
+        },
+        {
+          "date": "2026-11-01",
+          "rate": 12774.0
+        },
+        {
+          "date": "2026-11-02",
+          "rate": 12774.0
+        },
+        {
+          "date": "2026-11-03",
+          "rate": 12765.0
+        },
+        {
+          "date": "2026-11-04",
+          "rate": 13135.0
+        },
+        {
+          "date": "2026-11-05",
+          "rate": 13367.0
+        },
+        {
+          "date": "2026-11-06",
+          "rate": 13089.0
+        },
+        {
+          "date": "2026-11-07",
+          "rate": 13163.0
+        },
+        {
+          "date": "2026-11-08",
+          "rate": 13163.0
+        },
+        {
+          "date": "2026-11-09",
+          "rate": 13209.0
+        },
+        {
+          "date": "2026-11-10",
+          "rate": 13200.0
+        },
+        {
+          "date": "2026-11-11",
+          "rate": 13042.0
+        },
+        {
+          "date": "2026-11-12",
+          "rate": 12783.0
+        },
+        {
+          "date": "2026-11-13",
+          "rate": 12635.0
+        },
+        {
+          "date": "2026-11-14",
+          "rate": 12644.0
+        },
+        {
+          "date": "2026-11-15",
+          "rate": 12644.0
+        },
+        {
+          "date": "2026-11-16",
+          "rate": 12533.0
+        },
+        {
+          "date": "2026-11-17",
+          "rate": 12450.0
+        },
+        {
+          "date": "2026-11-18",
+          "rate": 12219.0
+        },
+        {
+          "date": "2026-11-19",
+          "rate": 12033.0
+        },
+        {
+          "date": "2026-11-20",
+          "rate": 11524.0
+        },
+        {
           "date": "2026-11-21",
-          "rate": 11441.0
+          "rate": 11496.0
         }
       ]
     }
@@ -103,23 +319,23 @@
     "chandukaka-chandannagar"
   ],
   "verdict": "BUY NOW",
-  "timing_basis": "Chandukaka Chandannagar's own price history (12 days; only 2 day(s) are shared by all stores so far)",
+  "timing_basis": "best price across 2 store(s), 28 days of common history",
   "best_store": "chandukaka-alandi",
   "best_label": "Chandukaka Alandi",
-  "rate": 11441.0,
-  "grams_for_10k": 0.874,
+  "rate": 11496.0,
+  "grams_for_10k": 0.8699,
   "reasons": [
-    "Cheapest today: Chandukaka Alandi at ₹11,441/g -> ₹10,000 buys 0.874 g.",
-    "Chandukaka Chandannagar is ₹25/g (0.22%) dearer: the same ₹10,000 of gold costs ₹22 more there (0.0019 g less for the same money).",
-    "Timing is judged on Chandukaka Chandannagar's own price history (12 days; only 2 day(s) are shared by all stores so far).",
+    "Cheapest today: Chandukaka Alandi at ₹11,496/g -> ₹10,000 buys 0.870 g.",
+    "Chandukaka Chandannagar is ₹553/g (4.81%) dearer: the same ₹10,000 of gold costs ₹481 more there (0.0400 g less for the same money).",
+    "Timing is judged on the best price across 2 store(s), 28 days of common history:",
     "Today is one of the cheaper days of the last month.",
-    "Today ₹11,466/g -> ₹10,000 buys 0.872 g (30-day average buys 0.754 g, best 0.872 g, worst 0.739 g).",
-    "Rate is 13.5% below the 12-day average (₹13,255).",
-    "Cheapest-rank: 1 of 12 days (1 = cheapest)."
+    "Today ₹12,033/g -> ₹10,000 buys 0.831 g (30-day average buys 0.775 g, best 0.831 g, worst 0.748 g).",
+    "Rate is 6.8% below the 28-day average (₹12,910).",
+    "Cheapest-rank: 1 of 28 days (1 = cheapest)."
   ],
-  "rate_22k": 11441.0,
+  "rate_22k": 11496.0,
   "silver": {
-    "generated_at": "2026-11-21 16:30:51",
+    "generated_at": "2026-11-21 11:31:10",
     "invest": 5000,
     "metal": "silver",
     "stores": [
@@ -127,24 +343,128 @@
         "key": "chandukaka-chandannagar",
         "label": "Chandukaka Chandannagar",
         "note": "",
-        "rate": 154.0,
-        "grams_for_10k": 32.4675,
-        "as_of": "2026-11-21",
+        "rate": 164.0,
+        "grams_for_10k": 30.4878,
+        "as_of": "2026-11-19",
         "stale": false,
-        "verdict": "COLLECTING DATA",
+        "verdict": "BUY NOW",
         "reasons": [
-          "Only 2 day(s) of history so far; need 7 to compare.",
-          "Today: ₹154/g -> ₹5,000 buys 32.468 g."
+          "Today is one of the cheaper days of the last month.",
+          "Today ₹164/g -> ₹5,000 buys 30.488 g (30-day average buys 26.898 g, best 30.488 g, worst 25.253 g).",
+          "Rate is 11.8% below the 27-day average (₹186).",
+          "Cheapest-rank: 1 of 27 days (1 = cheapest).",
+          "Down 3.53% vs previous day (₹170).",
+          "Rate has fallen 2 days in a row."
         ],
-        "days_of_data": 2,
+        "days_of_data": 27,
         "history": [
           {
             "date": "2026-10-24",
             "rate": 198.0
           },
           {
-            "date": "2026-11-21",
-            "rate": 154.0
+            "date": "2026-10-25",
+            "rate": 198.0
+          },
+          {
+            "date": "2026-10-26",
+            "rate": 198.0
+          },
+          {
+            "date": "2026-10-27",
+            "rate": 196.0
+          },
+          {
+            "date": "2026-10-28",
+            "rate": 198.0
+          },
+          {
+            "date": "2026-10-29",
+            "rate": 194.0
+          },
+          {
+            "date": "2026-10-30",
+            "rate": 183.0
+          },
+          {
+            "date": "2026-10-31",
+            "rate": 182.0
+          },
+          {
+            "date": "2026-11-01",
+            "rate": 182.0
+          },
+          {
+            "date": "2026-11-02",
+            "rate": 184.0
+          },
+          {
+            "date": "2026-11-03",
+            "rate": 182.0
+          },
+          {
+            "date": "2026-11-04",
+            "rate": 189.0
+          },
+          {
+            "date": "2026-11-05",
+            "rate": 191.0
+          },
+          {
+            "date": "2026-11-06",
+            "rate": 188.0
+          },
+          {
+            "date": "2026-11-07",
+            "rate": 189.0
+          },
+          {
+            "date": "2026-11-08",
+            "rate": 189.0
+          },
+          {
+            "date": "2026-11-09",
+            "rate": 191.0
+          },
+          {
+            "date": "2026-11-10",
+            "rate": 191.0
+          },
+          {
+            "date": "2026-11-11",
+            "rate": 190.0
+          },
+          {
+            "date": "2026-11-12",
+            "rate": 185.0
+          },
+          {
+            "date": "2026-11-13",
+            "rate": 181.0
+          },
+          {
+            "date": "2026-11-14",
+            "rate": 179.0
+          },
+          {
+            "date": "2026-11-15",
+            "rate": 179.0
+          },
+          {
+            "date": "2026-11-16",
+            "rate": 174.0
+          },
+          {
+            "date": "2026-11-17",
+            "rate": 174.0
+          },
+          {
+            "date": "2026-11-18",
+            "rate": 170.0
+          },
+          {
+            "date": "2026-11-19",
+            "rate": 164.0
           }
         ]
       },
@@ -156,16 +476,132 @@
         "grams_for_10k": 32.4675,
         "as_of": "2026-11-21",
         "stale": false,
-        "verdict": "COLLECTING DATA",
+        "verdict": "BUY NOW",
         "reasons": [
-          "Only 2 day(s) of history so far; need 7 to compare.",
-          "Today: ₹154/g -> ₹5,000 buys 32.468 g."
+          "Today is one of the cheaper days of the last month.",
+          "Today ₹154/g -> ₹5,000 buys 32.468 g (30-day average buys 27.071 g, best 32.468 g, worst 25.000 g).",
+          "Rate is 16.6% below the 30-day average (₹185).",
+          "Cheapest-rank: 1 of 30 days (1 = cheapest).",
+          "Down 1.91% vs previous day (₹157).",
+          "Rate has fallen 4 days in a row."
         ],
-        "days_of_data": 2,
+        "days_of_data": 30,
         "history": [
           {
             "date": "2026-10-23",
             "rate": 198.0
+          },
+          {
+            "date": "2026-10-24",
+            "rate": 198.0
+          },
+          {
+            "date": "2026-10-25",
+            "rate": 198.0
+          },
+          {
+            "date": "2026-10-26",
+            "rate": 200.0
+          },
+          {
+            "date": "2026-10-27",
+            "rate": 198.0
+          },
+          {
+            "date": "2026-10-28",
+            "rate": 198.0
+          },
+          {
+            "date": "2026-10-29",
+            "rate": 194.0
+          },
+          {
+            "date": "2026-10-30",
+            "rate": 185.0
+          },
+          {
+            "date": "2026-10-31",
+            "rate": 183.0
+          },
+          {
+            "date": "2026-11-01",
+            "rate": 183.0
+          },
+          {
+            "date": "2026-11-02",
+            "rate": 184.0
+          },
+          {
+            "date": "2026-11-03",
+            "rate": 182.0
+          },
+          {
+            "date": "2026-11-04",
+            "rate": 190.0
+          },
+          {
+            "date": "2026-11-05",
+            "rate": 192.0
+          },
+          {
+            "date": "2026-11-06",
+            "rate": 189.0
+          },
+          {
+            "date": "2026-11-07",
+            "rate": 189.0
+          },
+          {
+            "date": "2026-11-08",
+            "rate": 189.0
+          },
+          {
+            "date": "2026-11-09",
+            "rate": 191.0
+          },
+          {
+            "date": "2026-11-10",
+            "rate": 191.0
+          },
+          {
+            "date": "2026-11-11",
+            "rate": 190.0
+          },
+          {
+            "date": "2026-11-12",
+            "rate": 185.0
+          },
+          {
+            "date": "2026-11-13",
+            "rate": 183.0
+          },
+          {
+            "date": "2026-11-14",
+            "rate": 179.0
+          },
+          {
+            "date": "2026-11-15",
+            "rate": 179.0
+          },
+          {
+            "date": "2026-11-16",
+            "rate": 174.0
+          },
+          {
+            "date": "2026-11-17",
+            "rate": 174.0
+          },
+          {
+            "date": "2026-11-18",
+            "rate": 170.0
+          },
+          {
+            "date": "2026-11-19",
+            "rate": 164.0
+          },
+          {
+            "date": "2026-11-20",
+            "rate": 157.0
           },
           {
             "date": "2026-11-21",
@@ -175,21 +611,23 @@
       }
     ],
     "ranking": [
-      "chandukaka-chandannagar",
-      "chandukaka-alandi"
+      "chandukaka-alandi",
+      "chandukaka-chandannagar"
     ],
-    "verdict": "COLLECTING DATA",
-    "timing_basis": "Chandukaka Chandannagar's own price history (2 days; only 1 day(s) are shared by all stores so far)",
-    "best_store": "chandukaka-chandannagar",
-    "best_label": "Chandukaka Chandannagar",
+    "verdict": "BUY NOW",
+    "timing_basis": "best price across 2 store(s), 27 days of common history",
+    "best_store": "chandukaka-alandi",
+    "best_label": "Chandukaka Alandi",
     "rate": 154.0,
     "grams_for_10k": 32.4675,
     "reasons": [
-      "Cheapest today: Chandukaka Chandannagar at ₹154.00/g -> ₹5,000 buys 32.468 g.",
-      "Chandukaka Alandi has the same rate.",
-      "Timing is judged on Chandukaka Chandannagar's own price history (2 days; only 1 day(s) are shared by all stores so far).",
-      "Only 2 day(s) of history so far; need 7 to compare.",
-      "Today: ₹154/g -> ₹5,000 buys 32.468 g."
+      "Cheapest today: Chandukaka Alandi at ₹154.00/g -> ₹5,000 buys 32.468 g.",
+      "Chandukaka Chandannagar is ₹10.00/g (6.49%) dearer: the same ₹5,000 of silver costs ₹325 more there (1.9797 g less for the same money).",
+      "Timing is judged on the best price across 2 store(s), 27 days of common history:",
+      "Today is one of the cheaper days of the last month.",
+      "Today ₹164/g -> ₹5,000 buys 30.488 g (30-day average buys 26.898 g, best 30.488 g, worst 25.253 g).",
+      "Rate is 11.8% below the 27-day average (₹186).",
+      "Cheapest-rank: 1 of 27 days (1 = cheapest)."
     ]
   }
 }

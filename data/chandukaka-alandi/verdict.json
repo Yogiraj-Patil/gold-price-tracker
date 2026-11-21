@@ -1,15 +1,23 @@
 {
   "as_of": "2026-11-21",
-  "rate_22k": 11441.0,
-  "rate": 11441.0,
-  "grams_for_10k": 0.874,
-  "days_of_data": 2,
+  "rate_22k": 11496.0,
+  "rate": 11496.0,
+  "grams_for_10k": 0.8699,
+  "days_of_data": 30,
   "invest": 10000,
-  "verdict": "COLLECTING DATA",
+  "verdict": "BUY NOW",
   "reasons": [
-    "Only 2 day(s) of history so far; need 7 to compare.",
-    "Today: ₹11,441/g -> ₹10,000 buys 0.874 g."
+    "Today is one of the cheaper days of the last month.",
+    "Today ₹11,496/g -> ₹10,000 buys 0.870 g (30-day average buys 0.780 g, best 0.870 g, worst 0.748 g).",
+    "Rate is 10.3% below the 30-day average (₹12,817).",
+    "Cheapest-rank: 1 of 30 days (1 = cheapest).",
+    "Down 0.24% vs previous day (₹11,524).",
+    "Rate has fallen 6 days in a row."
   ],
+  "avg_30d": 12816.9,
+  "pct_vs_avg": -10.31,
+  "rank_30d": 1,
+  "window": 30,
   "store": "chandukaka-alandi",
   "store_label": "Chandukaka Alandi",
   "history": [
@@ -18,8 +26,120 @@
       "rate": 13117.0
     },
     {
+      "date": "2026-10-24",
+      "rate": 13117.0
+    },
+    {
+      "date": "2026-10-25",
+      "rate": 13117.0
+    },
+    {
+      "date": "2026-10-26",
+      "rate": 13181.0
+    },
+    {
+      "date": "2026-10-27",
+      "rate": 13181.0
+    },
+    {
+      "date": "2026-10-28",
+      "rate": 13246.0
+    },
+    {
+      "date": "2026-10-29",
+      "rate": 13191.0
+    },
+    {
+      "date": "2026-10-30",
+      "rate": 12941.0
+    },
+    {
+      "date": "2026-10-31",
+      "rate": 12774.0
+    },
+    {
+      "date": "2026-11-01",
+      "rate": 12774.0
+    },
+    {
+      "date": "2026-11-02",
+      "rate": 12774.0
+    },
+    {
+      "date": "2026-11-03",
+      "rate": 12765.0
+    },
+    {
+      "date": "2026-11-04",
+      "rate": 13135.0
+    },
+    {
+      "date": "2026-11-05",
+      "rate": 13367.0
+    },
+    {
+      "date": "2026-11-06",
+      "rate": 13089.0
+    },
+    {
+      "date": "2026-11-07",
+      "rate": 13163.0
+    },
+    {
+      "date": "2026-11-08",
+      "rate": 13163.0
+    },
+    {
+      "date": "2026-11-09",
+      "rate": 13209.0
+    },
+    {
+      "date": "2026-11-10",
+      "rate": 13200.0
+    },
+    {
+      "date": "2026-11-11",
+      "rate": 13042.0
+    },
+    {
+      "date": "2026-11-12",
+      "rate": 12783.0
+    },
+    {
+      "date": "2026-11-13",
+      "rate": 12635.0
+    },
+    {
+      "date": "2026-11-14",
+      "rate": 12644.0
+    },
+    {
+      "date": "2026-11-15",
+      "rate": 12644.0
+    },
+    {
+      "date": "2026-11-16",
+      "rate": 12533.0
+    },
+    {
+      "date": "2026-11-17",
+      "rate": 12450.0
+    },
+    {
+      "date": "2026-11-18",
+      "rate": 12219.0
+    },
+    {
+      "date": "2026-11-19",
+      "rate": 12033.0
+    },
+    {
+      "date": "2026-11-20",
+      "rate": 11524.0
+    },
+    {
       "date": "2026-11-21",
-      "rate": 11441.0
+      "rate": 11496.0
     }
   ],
   "silver": {
@@ -27,17 +147,137 @@
     "rate_silver": 154.0,
     "rate": 154.0,
     "grams_for_10k": 32.4675,
-    "days_of_data": 2,
+    "days_of_data": 30,
     "invest": 5000,
-    "verdict": "COLLECTING DATA",
+    "verdict": "BUY NOW",
     "reasons": [
-      "Only 2 day(s) of history so far; need 7 to compare.",
-      "Today: ₹154/g -> ₹5,000 buys 32.468 g."
+      "Today is one of the cheaper days of the last month.",
+      "Today ₹154/g -> ₹5,000 buys 32.468 g (30-day average buys 27.071 g, best 32.468 g, worst 25.000 g).",
+      "Rate is 16.6% below the 30-day average (₹185).",
+      "Cheapest-rank: 1 of 30 days (1 = cheapest).",
+      "Down 1.91% vs previous day (₹157).",
+      "Rate has fallen 4 days in a row."
     ],
+    "avg_30d": 184.7,
+    "pct_vs_avg": -16.62,
+    "rank_30d": 1,
+    "window": 30,
     "history": [
       {
         "date": "2026-10-23",
         "rate": 198.0
+      },
+      {
+        "date": "2026-10-24",
+        "rate": 198.0
+      },
+      {
+        "date": "2026-10-25",
+        "rate": 198.0
+      },
+      {
+        "date": "2026-10-26",
+        "rate": 200.0
+      },
+      {
+        "date": "2026-10-27",
+        "rate": 198.0
+      },
+      {
+        "date": "2026-10-28",
+        "rate": 198.0
+      },
+      {
+        "date": "2026-10-29",
+        "rate": 194.0
+      },
+      {
+        "date": "2026-10-30",
+        "rate": 185.0
+      },
+      {
+        "date": "2026-10-31",
+        "rate": 183.0
+      },
+      {
+        "date": "2026-11-01",
+        "rate": 183.0
+      },
+      {
+        "date": "2026-11-02",
+        "rate": 184.0
+      },
+      {
+        "date": "2026-11-03",
+        "rate": 182.0
+      },
+      {
+        "date": "2026-11-04",
+        "rate": 190.0
+      },
+      {
+        "date": "2026-11-05",
+        "rate": 192.0
+      },
+      {
+        "date": "2026-11-06",
+        "rate": 189.0
+      },
+      {
+        "date": "2026-11-07",
+        "rate": 189.0
+      },
+      {
+        "date": "2026-11-08",
+        "rate": 189.0
+      },
+      {
+        "date": "2026-11-09",
+        "rate": 191.0
+      },
+      {
+        "date": "2026-11-10",
+        "rate": 191.0
+      },
+      {
+        "date": "2026-11-11",
+        "rate": 190.0
+      },
+      {
+        "date": "2026-11-12",
+        "rate": 185.0
+      },
+      {
+        "date": "2026-11-13",
+        "rate": 183.0
+      },
+      {
+        "date": "2026-11-14",
+        "rate": 179.0
+      },
+      {
+        "date": "2026-11-15",
+        "rate": 179.0
+      },
+      {
+        "date": "2026-11-16",
+        "rate": 174.0
+      },
+      {
+        "date": "2026-11-17",
+        "rate": 174.0
+      },
+      {
+        "date": "2026-11-18",
+        "rate": 170.0
+      },
+      {
+        "date": "2026-11-19",
+        "rate": 164.0
+      },
+      {
+        "date": "2026-11-20",
+        "rate": 157.0
       },
       {
         "date": "2026-11-21",
