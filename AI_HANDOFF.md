@@ -18,7 +18,7 @@ message (email, ntfy phone push, WhatsApp). It is a statistical comparison, not 
 Current stores (see `scraper/stores.json`):
 | key | label | source | how read |
 |---|---|---|---|
-| `chandukaka-chandannagar` | Chandukaka Chandannagar | https://chandukakasaraf.in/todays-gold-rate/ | server-rendered HTML, `render: "http"`; silver quoted per 1 KG |
+| `chandukaka-chandannagar` | Chandukaka Chandannagar | https://chandukakasaraf.in/ | browser clicks "Today's Metal Rates"; silver quoted per 1 KG |
 | `chandukaka-alandi` | Chandukaka Alandi | https://csjewels.com/ ("Metal Rates" menu) | JavaScript fills the rates -> `render: "browser"`; silver per 1 g |
 
 Naming convention for new stores: `<brand>-<area>`, lowercase, hyphens (e.g. `png-kharadi`,
@@ -44,8 +44,8 @@ history.csv columns: `site_updated,fetched_at,rate_22k,rate_24k,grams_for_10k,ra
 One row per day at least; a second row the same day is added only if gold or silver changed.
 
 Pipeline per run: `fetch_rate.py` (all stores; one store failing never blocks the others; exits 1 if any failed)
--> `analyze.py` -> commit `data/` -> `notify.py` (only on manual/cron-job.org runs) -> final step fails the
-run if any store failed to fetch.
+-> `analyze.py` -> commit `data/` -> `notify.py` (only on manual runs when all stores fetched successfully)
+-> final step fails the run if any store failed to fetch.
 
 `summary.json` shape: top level = gold: `{generated_at, invest, metal, stores:[{key,label,note,rate,grams_for_10k,as_of,stale,verdict,reasons,days_of_data,history:[{date,rate}]}], ranking, verdict, best_store, best_label, rate, grams_for_10k, reasons, timing_basis}`; `silver` = same shape for silver (its `invest` is 5000).
 
@@ -63,7 +63,7 @@ channels; one failing channel never blocks the others (the run exits 1 if any fa
 |---|---|---|
 | email | `SMTP_USER`, `SMTP_PASS` (Gmail app password), `MAIL_TO` (comma-separated list; may be a repo **variable** or secret) | sent as Bcc, so recipients don't see each other. **Multipart: plain text + HTML.** The dashboard link is the **first line** of the plain-text part and a gold **"Open dashboard" button** at the top of the HTML part (`email_html()`); the `Dashboard: <url>` line in the body is also made clickable. |
 | ntfy phone push | `NTFY_TOPIC` | same body; the `Click` header makes tapping the notification open the dashboard |
-| WhatsApp (Meta Cloud API) | `WA_TOKEN`, `WA_PHONE_ID`, `WA_RECIPIENTS`, `WA_TEMPLATE` | template with 4 variables ({{1}} verdict, {{2}} gold rate, {{3}} grams, {{4}} reasons incl. a silver line); see `WHATSAPP_SETUP.md` |
+| WhatsApp (Meta Cloud API) | `WA_TOKEN`, `WA_PHONE_ID`, `WA_RECIPIENTS` (comma-separated, with country code), `WA_TEMPLATE` | Only approved **templates** can be sent (free text is not allowed outside a 24 h window). Default template `metal_daily` has 3 variables: `{{1}}` gold line (verdict, cheapest store, Rs/g, grams for Rs 10,000), `{{2}}` silver line (same, Rs 5,000), `{{3}}` reasons. Body used when creating it: `Daily metal update. Gold: {{1}}. Silver: {{2}}. Why: {{3}}. Open the dashboard for details.` Also supported: legacy `gold_daily` (4 variables: verdict, rate, grams, reasons + short silver line) and `hello_world` (Meta's sample, no variables). Variables must contain no line breaks/tabs and be <= 1024 chars (code builds them accordingly); templates must not start or end with a variable. Free test tier = up to 5 verified recipient numbers; one message per recipient per run; see `WHATSAPP_SETUP.md` |
 | WhatsApp (CallMeBot, backup) | `CALLMEBOT_RECIPIENTS` = `phone:apikey, ...` | optional |
 The dashboard URL comes from env `DASHBOARD_URL`, set in the workflow's Notify step to
 `https://<owner>.github.io/<repo>/` (it follows repo renames). Without it, no link is added anywhere.
@@ -84,7 +84,8 @@ the store then appears automatically in the fetch, analysis, dashboard tabs/tabl
 | `url` | yes | page that shows the rates |
 | `data_dir` | yes | `data/<key>` (folder is created automatically; first store alone uses plain `data`) |
 | `render` | yes | `"http"` = plain request first, headless browser as fallback (use when rates are in the HTML). `"browser"` = headless browser only (rates are inserted by JavaScript after load) |
-| `wait_text` | browser | text that appears once rates have loaded, e.g. `"Updated On"` (script waits up to 45 s for it) |
+| `click_text` | browser | optional accessible button name to click before reading, e.g. `"Today's Metal Rates"` |
+| `wait_text` | browser | text that appears once rates have loaded, e.g. `"22KT Gold"` (script waits up to 45 s for it) |
 | `anchor` | optional | text from which to start reading (avoids matching earlier text on the page) |
 | `rate_22k_re` | yes | regex; **group 1** = the 22K number |
 | `rate_24k_re` | optional | regex; group 1 = 24K number |
@@ -141,7 +142,7 @@ Timestamps are only displayed/stored as text, so any format is fine; if there is
 3. **Cloudflare / bot blocks.** Some sites 403 data-centre IPs (GitHub). The plain request fails, the browser fallback
    usually works. If a site blocks both, use the manual input (workflow input `manual_rate_22k`, `manual_rate_silver`
    in Rs/g, `manual_store` = the store key).
-4. **JavaScript sites**: wait for text that proves the rates loaded (`wait_text`), not a fixed sleep.
+4. **JavaScript sites**: if rates are behind a button, set `click_text` so the browser opens the panel first; then wait for text that proves rates loaded (`wait_text`), not a fixed sleep.
 5. **Silver units differ** between sites (per 1 g, 500 g, 1 kg). Always set `silver_per_grams`; the UI is per gram.
 6. A page can show a store's **online-only** rate or exclude making charges/GST - mention it in `note`.
 7. On the author's corporate laptop, SSL inspection (Zscaler) blocks `requests` and headless browsers, so live
