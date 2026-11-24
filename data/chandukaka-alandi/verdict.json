@@ -1,21 +1,21 @@
 {
   "as_of": "2026-11-24",
-  "rate_22k": 11682.0,
-  "rate": 11682.0,
-  "grams_for_10k": 0.856,
+  "rate_22k": 11672.0,
+  "rate": 11672.0,
+  "grams_for_10k": 0.8568,
   "days_of_data": 33,
   "invest": 10000,
   "verdict": "BUY NOW",
   "reasons": [
     "Today is one of the cheaper days of the last month.",
-    "Today ₹11,682/g -> ₹10,000 buys 0.856 g (30-day average buys 0.790 g, best 0.874 g, worst 0.748 g).",
-    "Rate is 7.7% below the 30-day average (₹12,662).",
+    "Today ₹11,672/g -> ₹10,000 buys 0.857 g (30-day average buys 0.790 g, best 0.874 g, worst 0.748 g).",
+    "Rate is 7.8% below the 30-day average (₹12,661).",
     "Cheapest-rank: 5 of 30 days (1 = cheapest).",
-    "Up 0.48% vs previous day (₹11,626).",
+    "Up 0.40% vs previous day (₹11,626).",
     "Rate has risen 2 days in a row."
   ],
-  "avg_30d": 12661.67,
-  "pct_vs_avg": -7.74,
+  "avg_30d": 12661.33,
+  "pct_vs_avg": -7.81,
   "rank_30d": 5,
   "window": 30,
   "store": "chandukaka-alandi",
@@ -151,7 +151,7 @@
     },
     {
       "date": "2026-11-24",
-      "rate": 11682.0
+      "rate": 11672.0
     }
   ],
   "silver": {
