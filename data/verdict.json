@@ -1,19 +1,19 @@
 {
-  "as_of": "2026-11-24",
+  "as_of": "2026-11-25",
   "rate_22k": 11679.0,
   "rate": 11679.0,
   "grams_for_10k": 0.8562,
-  "days_of_data": 41,
+  "days_of_data": 42,
   "invest": 10000,
   "verdict": "BUY NOW",
   "reasons": [
     "Today is one of the cheaper days of the last month.",
-    "Today ₹11,679/g -> ₹10,000 buys 0.856 g (30-day average buys 0.785 g, best 0.872 g, worst 0.746 g).",
-    "Rate is 8.3% below the 30-day average (₹12,742).",
+    "Today ₹11,679/g -> ₹10,000 buys 0.856 g (30-day average buys 0.788 g, best 0.872 g, worst 0.746 g).",
+    "Rate is 8.0% below the 30-day average (₹12,694).",
     "Cheapest-rank: 3 of 30 days (1 = cheapest)."
   ],
-  "avg_30d": 12741.67,
-  "pct_vs_avg": -8.34,
+  "avg_30d": 12693.53,
+  "pct_vs_avg": -7.99,
   "rank_30d": 3,
   "window": 30,
   "store": "chandukaka-chandannagar",
@@ -182,24 +182,28 @@
     {
       "date": "2026-11-24",
       "rate": 11679.0
+    },
+    {
+      "date": "2026-11-25",
+      "rate": 11679.0
     }
   ],
   "silver": {
-    "as_of": "2026-11-24",
+    "as_of": "2026-11-25",
     "rate_silver": 158.0,
     "rate": 158.0,
     "grams_for_10k": 31.6456,
-    "days_of_data": 31,
+    "days_of_data": 32,
     "invest": 5000,
     "verdict": "BUY NOW",
     "reasons": [
       "Today is one of the cheaper days of the last month.",
-      "Today ₹158/g -> ₹5,000 buys 31.646 g (30-day average buys 27.548 g, best 32.468 g, worst 25.253 g).",
-      "Rate is 12.9% below the 30-day average (₹182).",
+      "Today ₹158/g -> ₹5,000 buys 31.646 g (30-day average buys 27.752 g, best 32.468 g, worst 25.253 g).",
+      "Rate is 12.3% below the 30-day average (₹180).",
       "Cheapest-rank: 3 of 30 days (1 = cheapest)."
     ],
-    "avg_30d": 181.5,
-    "pct_vs_avg": -12.95,
+    "avg_30d": 180.17,
+    "pct_vs_avg": -12.3,
     "rank_30d": 3,
     "window": 30,
     "history": [
@@ -325,6 +329,10 @@
       },
       {
         "date": "2026-11-24",
+        "rate": 158.0
+      },
+      {
+        "date": "2026-11-25",
         "rate": 158.0
       }
     ]
