@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24 04:19:11",
+  "generated_at": "2026-11-24 11:30:59",
   "invest": 10000,
   "metal": "gold",
   "stores": [
@@ -7,16 +7,18 @@
       "key": "chandukaka-chandannagar",
       "label": "Chandukaka Chandannagar",
       "note": "",
-      "rate": 11679.0,
-      "grams_for_10k": 0.8562,
+      "rate": 11707.0,
+      "grams_for_10k": 0.8542,
       "as_of": "2026-11-24",
       "stale": false,
       "verdict": "BUY NOW",
       "reasons": [
         "Today is one of the cheaper days of the last month.",
-        "Today ₹11,679/g -> ₹10,000 buys 0.856 g (30-day average buys 0.785 g, best 0.872 g, worst 0.746 g).",
-        "Rate is 8.3% below the 30-day average (₹12,742).",
-        "Cheapest-rank: 3 of 30 days (1 = cheapest)."
+        "Today ₹11,707/g -> ₹10,000 buys 0.854 g (30-day average buys 0.785 g, best 0.872 g, worst 0.746 g).",
+        "Rate is 8.1% below the 30-day average (₹12,743).",
+        "Cheapest-rank: 4 of 30 days (1 = cheapest).",
+        "Up 0.24% vs previous day (₹11,679).",
+        "Rate has risen 2 days in a row."
       ],
       "days_of_data": 41,
       "history": [
@@ -182,7 +184,7 @@
         },
         {
           "date": "2026-11-24",
-          "rate": 11679.0
+          "rate": 11707.0
         }
       ]
     },
@@ -190,16 +192,18 @@
       "key": "chandukaka-alandi",
       "label": "Chandukaka Alandi",
       "note": "Rates are labelled 'applicable for online purchase only'",
-      "rate": 11626.0,
-      "grams_for_10k": 0.8601,
+      "rate": 11682.0,
+      "grams_for_10k": 0.856,
       "as_of": "2026-11-24",
       "stale": false,
       "verdict": "BUY NOW",
       "reasons": [
         "Today is one of the cheaper days of the last month.",
-        "Today ₹11,626/g -> ₹10,000 buys 0.860 g (30-day average buys 0.790 g, best 0.874 g, worst 0.748 g).",
-        "Rate is 8.2% below the 30-day average (₹12,660).",
-        "Cheapest-rank: 4 of 30 days (1 = cheapest)."
+        "Today ₹11,682/g -> ₹10,000 buys 0.856 g (30-day average buys 0.790 g, best 0.874 g, worst 0.748 g).",
+        "Rate is 7.7% below the 30-day average (₹12,662).",
+        "Cheapest-rank: 5 of 30 days (1 = cheapest).",
+        "Up 0.48% vs previous day (₹11,626).",
+        "Rate has risen 2 days in a row."
       ],
       "days_of_data": 33,
       "history": [
@@ -333,7 +337,7 @@
         },
         {
           "date": "2026-11-24",
-          "rate": 11626.0
+          "rate": 11682.0
         }
       ]
     }
@@ -346,20 +350,20 @@
   "timing_basis": "best price across 2 store(s), 32 days of common history",
   "best_store": "chandukaka-alandi",
   "best_label": "Chandukaka Alandi",
-  "rate": 11626.0,
-  "grams_for_10k": 0.8601,
+  "rate": 11682.0,
+  "grams_for_10k": 0.856,
   "reasons": [
-    "Cheapest today: Chandukaka Alandi at ₹11,626/g -> ₹10,000 buys 0.860 g.",
-    "Chandukaka Chandannagar is ₹53/g (0.46%) dearer: the same ₹10,000 of gold costs ₹46 more there (0.0039 g less for the same money).",
+    "Cheapest today: Chandukaka Alandi at ₹11,682/g -> ₹10,000 buys 0.856 g.",
+    "Chandukaka Chandannagar is ₹25/g (0.21%) dearer: the same ₹10,000 of gold costs ₹21 more there (0.0018 g less for the same money).",
     "Timing is judged on the best price across 2 store(s), 32 days of common history:",
     "Today is one of the cheaper days of the last month.",
-    "Today ₹11,626/g -> ₹10,000 buys 0.860 g (30-day average buys 0.787 g, best 0.874 g, worst 0.748 g).",
-    "Rate is 8.5% below the 30-day average (₹12,712).",
-    "Cheapest-rank: 3 of 30 days (1 = cheapest)."
+    "Today ₹11,682/g -> ₹10,000 buys 0.856 g (30-day average buys 0.787 g, best 0.874 g, worst 0.748 g).",
+    "Rate is 8.1% below the 30-day average (₹12,714).",
+    "Cheapest-rank: 4 of 30 days (1 = cheapest)."
   ],
-  "rate_22k": 11626.0,
+  "rate_22k": 11682.0,
   "silver": {
-    "generated_at": "2026-11-24 04:19:11",
+    "generated_at": "2026-11-24 11:30:59",
     "invest": 5000,
     "metal": "silver",
     "stores": [
