@@ -1,20 +1,20 @@
 {
   "as_of": "2026-11-25",
-  "rate_22k": 11385.0,
-  "rate": 11385.0,
-  "grams_for_10k": 0.8783,
+  "rate_22k": 11348.0,
+  "rate": 11348.0,
+  "grams_for_10k": 0.8812,
   "days_of_data": 34,
   "invest": 10000,
   "verdict": "BUY NOW",
   "reasons": [
     "Today is one of the cheaper days of the last month.",
-    "Today ₹11,385/g -> ₹10,000 buys 0.878 g (30-day average buys 0.794 g, best 0.878 g, worst 0.748 g).",
-    "Rate is 9.7% below the 30-day average (₹12,601).",
+    "Today ₹11,348/g -> ₹10,000 buys 0.881 g (30-day average buys 0.794 g, best 0.881 g, worst 0.748 g).",
+    "Rate is 9.9% below the 30-day average (₹12,600).",
     "Cheapest-rank: 1 of 30 days (1 = cheapest).",
-    "Down 2.46% vs previous day (₹11,672)."
+    "Down 2.78% vs previous day (₹11,672)."
   ],
-  "avg_30d": 12601.47,
-  "pct_vs_avg": -9.65,
+  "avg_30d": 12600.23,
+  "pct_vs_avg": -9.94,
   "rank_30d": 1,
   "window": 30,
   "store": "chandukaka-alandi",
@@ -154,26 +154,26 @@
     },
     {
       "date": "2026-11-25",
-      "rate": 11385.0
+      "rate": 11348.0
     }
   ],
   "silver": {
     "as_of": "2026-11-25",
-    "rate_silver": 151.0,
-    "rate": 151.0,
-    "grams_for_10k": 33.1126,
+    "rate_silver": 150.0,
+    "rate": 150.0,
+    "grams_for_10k": 33.3333,
     "days_of_data": 34,
     "invest": 5000,
     "verdict": "BUY NOW",
     "reasons": [
       "Today is one of the cheaper days of the last month.",
-      "Today ₹151/g -> ₹5,000 buys 33.113 g (30-day average buys 27.943 g, best 33.113 g, worst 25.253 g).",
-      "Rate is 15.6% below the 30-day average (₹179).",
+      "Today ₹150/g -> ₹5,000 buys 33.333 g (30-day average buys 27.949 g, best 33.333 g, worst 25.253 g).",
+      "Rate is 16.2% below the 30-day average (₹179).",
       "Cheapest-rank: 1 of 30 days (1 = cheapest).",
-      "Down 4.43% vs previous day (₹158)."
+      "Down 5.06% vs previous day (₹158)."
     ],
-    "avg_30d": 178.93,
-    "pct_vs_avg": -15.61,
+    "avg_30d": 178.9,
+    "pct_vs_avg": -16.15,
     "rank_30d": 1,
     "window": 30,
     "history": [
@@ -311,7 +311,7 @@
       },
       {
         "date": "2026-11-25",
-        "rate": 151.0
+        "rate": 150.0
       }
     ]
   }
