@@ -1,20 +1,21 @@
 {
   "as_of": "2026-11-25",
-  "rate_22k": 11672.0,
-  "rate": 11672.0,
-  "grams_for_10k": 0.8568,
+  "rate_22k": 11385.0,
+  "rate": 11385.0,
+  "grams_for_10k": 0.8783,
   "days_of_data": 34,
   "invest": 10000,
   "verdict": "BUY NOW",
   "reasons": [
     "Today is one of the cheaper days of the last month.",
-    "Today ₹11,672/g -> ₹10,000 buys 0.857 g (30-day average buys 0.793 g, best 0.874 g, worst 0.748 g).",
-    "Rate is 7.4% below the 30-day average (₹12,611).",
-    "Cheapest-rank: 5 of 30 days (1 = cheapest)."
+    "Today ₹11,385/g -> ₹10,000 buys 0.878 g (30-day average buys 0.794 g, best 0.878 g, worst 0.748 g).",
+    "Rate is 9.7% below the 30-day average (₹12,601).",
+    "Cheapest-rank: 1 of 30 days (1 = cheapest).",
+    "Down 2.46% vs previous day (₹11,672)."
   ],
-  "avg_30d": 12611.03,
-  "pct_vs_avg": -7.45,
-  "rank_30d": 5,
+  "avg_30d": 12601.47,
+  "pct_vs_avg": -9.65,
+  "rank_30d": 1,
   "window": 30,
   "store": "chandukaka-alandi",
   "store_label": "Chandukaka Alandi",
@@ -153,26 +154,27 @@
     },
     {
       "date": "2026-11-25",
-      "rate": 11672.0
+      "rate": 11385.0
     }
   ],
   "silver": {
     "as_of": "2026-11-25",
-    "rate_silver": 158.0,
-    "rate": 158.0,
-    "grams_for_10k": 31.6456,
+    "rate_silver": 151.0,
+    "rate": 151.0,
+    "grams_for_10k": 33.1126,
     "days_of_data": 34,
     "invest": 5000,
     "verdict": "BUY NOW",
     "reasons": [
       "Today is one of the cheaper days of the last month.",
-      "Today ₹158/g -> ₹5,000 buys 31.646 g (30-day average buys 27.907 g, best 32.468 g, worst 25.253 g).",
-      "Rate is 11.8% below the 30-day average (₹179).",
-      "Cheapest-rank: 4 of 30 days (1 = cheapest)."
+      "Today ₹151/g -> ₹5,000 buys 33.113 g (30-day average buys 27.943 g, best 33.113 g, worst 25.253 g).",
+      "Rate is 15.6% below the 30-day average (₹179).",
+      "Cheapest-rank: 1 of 30 days (1 = cheapest).",
+      "Down 4.43% vs previous day (₹158)."
     ],
-    "avg_30d": 179.17,
-    "pct_vs_avg": -11.81,
-    "rank_30d": 4,
+    "avg_30d": 178.93,
+    "pct_vs_avg": -15.61,
+    "rank_30d": 1,
     "window": 30,
     "history": [
       {
@@ -309,7 +311,7 @@
       },
       {
         "date": "2026-11-25",
-        "rate": 158.0
+        "rate": 151.0
       }
     ]
   }
