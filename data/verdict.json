@@ -1,20 +1,19 @@
 {
-  "as_of": "2026-11-26",
+  "as_of": "2026-11-27",
   "rate_22k": 11411.0,
   "rate": 11411.0,
   "grams_for_10k": 0.8763,
-  "days_of_data": 43,
+  "days_of_data": 44,
   "invest": 10000,
   "verdict": "BUY NOW",
   "reasons": [
     "Today is one of the cheaper days of the last month.",
-    "Today ₹11,411/g -> ₹10,000 buys 0.876 g (30-day average buys 0.792 g, best 0.884 g, worst 0.746 g).",
-    "Rate is 9.6% below the 30-day average (₹12,623).",
-    "Cheapest-rank: 2 of 30 days (1 = cheapest).",
-    "Up 0.82% vs previous day (₹11,318)."
+    "Today ₹11,411/g -> ₹10,000 buys 0.876 g (30-day average buys 0.796 g, best 0.884 g, worst 0.746 g).",
+    "Rate is 9.2% below the 30-day average (₹12,564).",
+    "Cheapest-rank: 2 of 30 days (1 = cheapest)."
   ],
-  "avg_30d": 12622.6,
-  "pct_vs_avg": -9.6,
+  "avg_30d": 12564.0,
+  "pct_vs_avg": -9.18,
   "rank_30d": 2,
   "window": 30,
   "store": "chandukaka-chandannagar",
@@ -191,25 +190,28 @@
     {
       "date": "2026-11-26",
       "rate": 11411.0
+    },
+    {
+      "date": "2026-11-27",
+      "rate": 11411.0
     }
   ],
   "silver": {
-    "as_of": "2026-11-26",
+    "as_of": "2026-11-27",
     "rate_silver": 151.0,
     "rate": 151.0,
     "grams_for_10k": 33.1126,
-    "days_of_data": 33,
+    "days_of_data": 34,
     "invest": 5000,
     "verdict": "BUY NOW",
     "reasons": [
       "Today is one of the cheaper days of the last month.",
-      "Today ₹151/g -> ₹5,000 buys 33.113 g (30-day average buys 28.048 g, best 33.784 g, worst 25.253 g).",
-      "Rate is 15.3% below the 30-day average (₹178).",
-      "Cheapest-rank: 2 of 30 days (1 = cheapest).",
-      "Up 2.03% vs previous day (₹148)."
+      "Today ₹151/g -> ₹5,000 buys 33.113 g (30-day average buys 28.286 g, best 33.784 g, worst 25.253 g).",
+      "Rate is 14.6% below the 30-day average (₹177).",
+      "Cheapest-rank: 2 of 30 days (1 = cheapest)."
     ],
-    "avg_30d": 178.27,
-    "pct_vs_avg": -15.3,
+    "avg_30d": 176.77,
+    "pct_vs_avg": -14.58,
     "rank_30d": 2,
     "window": 30,
     "history": [
@@ -343,6 +345,10 @@
       },
       {
         "date": "2026-11-26",
+        "rate": 151.0
+      },
+      {
+        "date": "2026-11-27",
         "rate": 151.0
       }
     ]
