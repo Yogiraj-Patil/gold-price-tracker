@@ -1,22 +1,22 @@
 {
   "as_of": "2026-11-27",
-  "rate_22k": 11580.0,
-  "rate": 11580.0,
-  "grams_for_10k": 0.8636,
+  "rate_22k": 11700.0,
+  "rate": 11700.0,
+  "grams_for_10k": 0.8547,
   "days_of_data": 36,
   "invest": 10000,
   "verdict": "BUY NOW",
   "reasons": [
     "Today is one of the cheaper days of the last month.",
-    "Today ₹11,580/g -> ₹10,000 buys 0.864 g (30-day average buys 0.801 g, best 0.881 g, worst 0.748 g).",
-    "Rate is 7.3% below the 30-day average (₹12,486).",
-    "Cheapest-rank: 6 of 30 days (1 = cheapest).",
-    "Up 1.29% vs previous day (₹11,432).",
+    "Today ₹11,700/g -> ₹10,000 buys 0.855 g (30-day average buys 0.801 g, best 0.881 g, worst 0.748 g).",
+    "Rate is 6.3% below the 30-day average (₹12,490).",
+    "Cheapest-rank: 8 of 30 days (1 = cheapest).",
+    "Up 2.34% vs previous day (₹11,432).",
     "Rate has risen 2 days in a row."
   ],
-  "avg_30d": 12486.4,
-  "pct_vs_avg": -7.26,
-  "rank_30d": 6,
+  "avg_30d": 12490.4,
+  "pct_vs_avg": -6.33,
+  "rank_30d": 8,
   "window": 30,
   "store": "chandukaka-alandi",
   "store_label": "Chandukaka Alandi",
@@ -163,28 +163,28 @@
     },
     {
       "date": "2026-11-27",
-      "rate": 11580.0
+      "rate": 11700.0
     }
   ],
   "silver": {
     "as_of": "2026-11-27",
-    "rate_silver": 157.0,
-    "rate": 157.0,
-    "grams_for_10k": 31.8471,
+    "rate_silver": 159.0,
+    "rate": 159.0,
+    "grams_for_10k": 31.4465,
     "days_of_data": 36,
     "invest": 5000,
     "verdict": "BUY NOW",
     "reasons": [
       "Today is one of the cheaper days of the last month.",
-      "Today ₹157/g -> ₹5,000 buys 31.847 g (30-day average buys 28.398 g, best 33.333 g, worst 25.773 g).",
-      "Rate is 10.8% below the 30-day average (₹176).",
-      "Cheapest-rank: 5 of 30 days (1 = cheapest).",
-      "Up 1.95% vs previous day (₹154).",
+      "Today ₹159/g -> ₹5,000 buys 31.447 g (30-day average buys 28.388 g, best 33.333 g, worst 25.773 g).",
+      "Rate is 9.7% below the 30-day average (₹176).",
+      "Cheapest-rank: 8 of 30 days (1 = cheapest).",
+      "Up 3.25% vs previous day (₹154).",
       "Rate has risen 2 days in a row."
     ],
-    "avg_30d": 176.07,
-    "pct_vs_avg": -10.83,
-    "rank_30d": 5,
+    "avg_30d": 176.13,
+    "pct_vs_avg": -9.73,
+    "rank_30d": 8,
     "window": 30,
     "history": [
       {
@@ -329,7 +329,7 @@
       },
       {
         "date": "2026-11-27",
-        "rate": 157.0
+        "rate": 159.0
       }
     ]
   }
