@@ -203,23 +203,21 @@
   ],
   "silver": {
     "as_of": "2026-11-28",
-    "rate_silver": 160.0,
-    "rate": 160.0,
-    "grams_for_10k": 31.25,
+    "rate_silver": 158.0,
+    "rate": 158.0,
+    "grams_for_10k": 31.6456,
     "days_of_data": 35,
     "invest": 5000,
     "verdict": "BUY NOW",
     "reasons": [
       "Today is one of the cheaper days of the last month.",
-      "Today ₹160/g -> ₹5,000 buys 31.250 g (30-day average buys 28.452 g, best 33.784 g, worst 25.773 g).",
-      "Rate is 9.0% below the 30-day average (₹176).",
-      "Cheapest-rank: 8 of 30 days (1 = cheapest).",
-      "Up 1.27% vs previous day (₹158).",
-      "Rate has risen 3 days in a row."
+      "Today ₹158/g -> ₹5,000 buys 31.646 g (30-day average buys 28.463 g, best 33.784 g, worst 25.773 g).",
+      "Rate is 10.1% below the 30-day average (₹176).",
+      "Cheapest-rank: 5 of 30 days (1 = cheapest)."
     ],
-    "avg_30d": 175.73,
-    "pct_vs_avg": -8.95,
-    "rank_30d": 8,
+    "avg_30d": 175.67,
+    "pct_vs_avg": -10.06,
+    "rank_30d": 5,
     "window": 30,
     "history": [
       {
@@ -360,7 +358,7 @@
       },
       {
         "date": "2026-11-28",
-        "rate": 160.0
+        "rate": 158.0
       }
     ]
   }
